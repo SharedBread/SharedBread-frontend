@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, withRouter } from "react-router-dom";
 
 // Pages
-import Home from "./Pages/Home";
+import Home from "../pages/Home"
 
 function Container({ location }) {
   return (
@@ -14,4 +14,4 @@ function Container({ location }) {
   );
 }
 
-export default withRouter(Container);
+export default withRouter(Container);   
