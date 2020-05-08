@@ -10,7 +10,7 @@ function Container({ location }) {
 
     <Switch location={location}>
         <Route exact path="/" component={Home}/>
-        <Route path="/map" component={Map}/>
+        <Route path="/Map" component={Map}/>
     </Switch>
     
   );
