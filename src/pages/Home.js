@@ -18,7 +18,7 @@ function Home() {
             </Card.Text>
           </Card.Body>
           <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
+            <small className="text-muted">Phone: 01774 482 456</small>
           </Card.Footer>
         </Card>
         <Card>
@@ -30,7 +30,7 @@ function Home() {
             </Card.Text>
           </Card.Body>
           <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
+            <small className="text-muted">Phone: 01654 482 456</small>
           </Card.Footer>
         </Card>
       </CardDeck>
