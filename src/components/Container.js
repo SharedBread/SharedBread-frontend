@@ -14,4 +14,4 @@ function Container({ location }) {
   );
 }
 
-export default Container;
+export default withRouter(Container);
