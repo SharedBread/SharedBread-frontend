@@ -1,12 +1,39 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Button, Card, CardDeck } from "react-bootstrap";
 
 function Home() {
   return (
     <>
       <h1>We will create a UK without the need for food banks</h1>
       <br />
-      <h3>Your Local Food Banks</h3>
+      <h4>Your Local Food Banks</h4>
+
+      <CardDeck>
+        <Card>
+          <Card.Img variant="top" src="" />
+          <Card.Body>
+            <Card.Title>Food Bank 1</Card.Title>
+            <Card.Text>
+              We're located in Burnley, and require tins of food.
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">Last updated 3 mins ago</small>
+          </Card.Footer>
+        </Card>
+        <Card>
+          <Card.Img variant="top" src="" />
+          <Card.Body>
+            <Card.Title>Food Bank 2 </Card.Title>
+            <Card.Text>
+              We're located near the Morrisons in Leyland.
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">Last updated 3 mins ago</small>
+          </Card.Footer>
+        </Card>
+      </CardDeck>
       <Button variant="success" block>
         Donate Food
       </Button>
