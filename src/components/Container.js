@@ -3,12 +3,14 @@ import { Switch, Route, withRouter } from "react-router-dom";
 
 // Pages
 import Home from "../pages/Home"
+import Map from "../pages/map"
 
 function Container({ location }) {
   return (
 
     <Switch location={location}>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Home}/>
+        <Route path="/map" component={Map}/>
     </Switch>
     
   );
