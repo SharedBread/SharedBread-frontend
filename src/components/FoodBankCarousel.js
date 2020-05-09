@@ -4,9 +4,11 @@ import { Card, Carousel } from "react-bootstrap";
 function FoodBankCarousel() {
   const [location, setLocation] = useState([{ name: "Loading..." }]);
 
+  const postcode = "PR253NX"; // this will be dynamic - either geolocation or pc from DB.
+
   useEffect(() => {
     fetch(
-      "https://cors-anywhere.herokuapp.com/https://www.givefood.org.uk/api/1/foodbanks/search/?address=PR253NX"
+      `https://cors-anywhere.herokuapp.com/https://www.givefood.org.uk/api/1/foodbanks/search/?address=${postcode}`
     )
       .then((response) => response.json())
       .then((data) => {
