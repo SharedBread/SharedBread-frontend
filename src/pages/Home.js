@@ -5,7 +5,7 @@ import FoodBankCarousel from "../components/FoodBankCarousel";
 function Home() {
   return (
     <>
-      <h1>We will create a UK without the need for food banks</h1>
+      <h1>We will create a UK without the need for food banks<span style={{fontSize:'12px'}}> - The Trussel Trust</span></h1>
       <br />
       <h4>Your Local Food Banks</h4>
       <FoodBankCarousel />
