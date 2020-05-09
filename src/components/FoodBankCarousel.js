@@ -28,7 +28,9 @@ function FoodBankCarousel() {
                 <Card.Text>{foodbank.district}</Card.Text>
               </Card.Body>
               <Card.Footer>
-                <small className="text-muted"><a href={`tel:${foodbank.phone}`}>{foodbank.phone}</a></small>
+                <small className="text-muted"><a href={`tel:${foodbank.phone}`}>Call: {foodbank.phone}</a></small>
+                <br />
+                <small className="text-muted">Distance: {foodbank.distance_mi} Miles away</small>
               </Card.Footer>
             </Card>
           </Carousel.Item>
