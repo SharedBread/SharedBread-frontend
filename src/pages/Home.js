@@ -9,6 +9,7 @@ function Home() {
       <br />
       <h4>Your Local Food Banks</h4>
       <FoodBankCarousel />
+      <div style={{marginTop: 30}}>
       <Button variant="success" block>
         Donate Food
       </Button>
@@ -18,6 +19,7 @@ function Home() {
       <Button variant="success" block>
         Volunteer
       </Button>
+      </div>
     </>
   );
 }
