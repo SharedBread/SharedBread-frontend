@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Carousel } from "react-bootstrap";
 
-function FoodBankCarousel(props) {
+function FoodBankCarousel() {
   const [location, setLocation] = useState([{ name: "Loading..." }]);
 
   useEffect(() => {
