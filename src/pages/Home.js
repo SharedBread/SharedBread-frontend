@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import FoodBankCarousel from "../components/FoodBankCarousel"
+import FoodBankCarousel from "../components/FoodBankCarousel";
 
 function Home() {
   return (
