@@ -1,30 +1,25 @@
 import React from "react";
 import { Card, Carousel } from "react-bootstrap";
 
-function FoodBankCarousel() {
+function FoodBankCarousel(props) {
+  fetch(
+    "https://cors-anywhere.herokuapp.com/https://www.givefood.org.uk/api/1/foodbanks/search/?address=PR253NX"
+  )
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+
   return (
     <Carousel>
       <Carousel.Item>
         <Card>
           <Card.Body>
-            <Card.Title>Food Bank 1</Card.Title>
+            <Card.Title>{props.name}</Card.Title>
             <Card.Text>
-              We're located in Burnley, and require tins of food.
+              {props.district}
             </Card.Text>
           </Card.Body>
           <Card.Footer>
-            <small className="text-muted">Phone: 01774 482 456</small>
-          </Card.Footer>
-        </Card>
-      </Carousel.Item>
-      <Carousel.Item>
-        <Card>
-          <Card.Body>
-            <Card.Title>Food Bank 2 </Card.Title>
-            <Card.Text>We're located near the Morrisons in Leyland.</Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Phone: 01654 482 456</small>
+            <small className="text-muted">{props.phone}</small>
           </Card.Footer>
         </Card>
       </Carousel.Item>
