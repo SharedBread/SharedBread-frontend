@@ -19,7 +19,7 @@ function FoodBankCarousel(props) {
     <Carousel>
       {location.map((foodbank) => {
         return (
-          <Carousel.Item>
+          <Carousel.Item key={`${foodbank.charity_number}`}>
             <Card>
               <Card.Body>
                 <Card.Title>{foodbank.name}</Card.Title>
