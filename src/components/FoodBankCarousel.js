@@ -18,7 +18,7 @@ function FoodBankCarousel() {
   }, []);
 
   return (
-    <Carousel>
+    <Carousel indicators={false}>
       {location.map((foodbank) => {
         return (
           <Carousel.Item key={`${foodbank.charity_number}`}>
