@@ -5,7 +5,7 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import Home from "../pages/Home"
 import Map from "../pages/map"
 
-function Container({ location }) {
+function RouteContainer({ location }) {
   return (
 
     <Switch location={location}>
@@ -16,4 +16,4 @@ function Container({ location }) {
   );
 }
 
-export default withRouter(Container);   
+export default withRouter(RouteContainer);   

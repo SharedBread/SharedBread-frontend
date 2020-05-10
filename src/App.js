@@ -1,15 +1,18 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from "react-bootstrap";
 
-import Container from "./components/Container"
+import RouteContainer from "./components/RouteContainer"
 
 function App() {
   return (
     <Router>
+      <Container>
+        <RouteContainer /> 
 
-      <Container /> 
-
+      </Container>
     </Router>
     
     
