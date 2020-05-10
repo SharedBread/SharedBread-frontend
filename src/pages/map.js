@@ -40,7 +40,15 @@ function Map() {
                 />
                 <div className="row">
                     <div className="col-12 col-md-4"> <input type="text" className="text-control" placeholder="Postcode" onChange={handleTextUpdate} />
-                        
+                        {locations.map(location => {
+                            return (
+                                <Card>
+                                    <Card.Body>
+                                    <Card.Title>{location.name}</Card.Title>
+                                    </Card.Body>
+                                </Card>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
