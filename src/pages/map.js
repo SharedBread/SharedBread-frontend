@@ -30,7 +30,7 @@ function Map() {
             <h1>Your Local Food Banks</h1>
             <div>
                 <MyMapComponent
-                    containerElement={<div style={{ height: `500px`, width: `500px` }} />}
+                    containerElement={<div style={{ height: `500px`, width: `100%` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
                 />
                         {locations.map(location => {
