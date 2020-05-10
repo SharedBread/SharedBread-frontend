@@ -13,7 +13,7 @@ function Map() {
         </GoogleMap>
     ));
 
-    const postCode= "M130LE"
+    const postCode = "M130LE"
 
     const [locations, setLocation] = useState([])
 
@@ -44,8 +44,9 @@ function Map() {
                             return (
                                 <Card>
                                     <Card.Body>
-                                    <Card.Title>{location.name}</Card.Title>
+                                     <Card-Body>  <h2>{location.name} </h2></Card-Body>   
                                     </Card.Body>
+    
                                 </Card>
                             )
                         })}
