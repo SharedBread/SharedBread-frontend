@@ -2,16 +2,41 @@
 
 body {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
+  color: #394648;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #E3E8E4 !important;
 }
 
+/* Headline */
 h1 {
   font-family: 'Quicksand', sans-serif;
   font-size: 30px;
+  color: #497C5B;
+  font-weight: 700 !important;
 }
+/* Sub headings */
+h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 25px !important;
+  font-weight: 400 !important;
+  color: #394648;
+}
+
+/* Body titles */
+h3 {
+  font-family: 'Roboto', sans-serif;
+  color: #497C5B;
+}
+
+.button {
+  font-size: 24px !important;
+  color: #FFFFFF !important;
+  background-color: #39AA71 !important;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
