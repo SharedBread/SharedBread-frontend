@@ -37,6 +37,7 @@ function FoodBankCarousel() {
         return (
           <Carousel.Item key={`${foodbank.charity_number}`}>
             <Card>
+            <Card.Img variant="top" src="" />
               <Card.Body>
                 <Card.Title>{foodbank.name}</Card.Title>
                 <Card.Text>{foodbank.district}</Card.Text>
