@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import {Pie, Doughnut} from 'react-chartjs-2';
+
 
 function FoodsRequired() {
   const postcode = "PR253NX"; // this will be dynamic - either geolocation or pc from DB.
@@ -32,7 +34,24 @@ function FoodsRequired() {
     return frequencyObj;
   };
 
-  return <></>;
+
+
+  return (<>
+    <Doughnut
+          data={state}
+          options={{
+            title:{
+              display:true,
+              text:'',
+              fontSize:20
+            },
+            legend:{
+              display:true,
+              position:'right'
+            }
+          }}
+        />
+  </>);
 }
 
 export default FoodsRequired;
