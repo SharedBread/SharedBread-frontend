@@ -26,7 +26,9 @@ function Map() {
             })
     }, []);
 
- 
+    const handleTextUpdate = (event) => {
+        setLocation(event.target.value)
+    };
 
     return (
         <div>
