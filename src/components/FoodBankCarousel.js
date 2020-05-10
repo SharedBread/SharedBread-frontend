@@ -12,7 +12,6 @@ function FoodBankCarousel() {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setLocation(data);
       });
   }, []);
