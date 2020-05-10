@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, Marker, withGoogleMap } from 'react-google-maps';
-import { Button, Card } from 'react-bootstrap';
+import {Card } from 'react-bootstrap';
 
 function Map() {
 
@@ -44,9 +44,11 @@ function Map() {
                             return (
                                 <Card>
                                     <Card.Body>
-                                     <Card-Body>  <h2>{location.name} </h2></Card-Body>   
+                                     <Card.Title>  <h4>{location.name} </h4></Card.Title>  
+                                     <Card.Text>  {location.address}</Card.Text>  
+                                     <Card.Text>  {location.postcode}</Card.Text>  
+                                     <Card.Text>  {location.phone}</Card.Text>
                                     </Card.Body>
-    
                                 </Card>
                             )
                         })}
@@ -56,5 +58,4 @@ function Map() {
         </div>
     );
 }
-
 export default Map;
