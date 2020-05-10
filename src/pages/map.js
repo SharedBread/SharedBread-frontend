@@ -22,13 +22,8 @@ function Map() {
             .then((response) => response.json())
             .then((data) => {
                 setLocation(data)
-                console.log(data)
             })
     }, []);
-
-    const handleTextUpdate = (event) => {
-        setLocation(event.target.value)
-    };
 
     return (
         <div>
@@ -38,8 +33,6 @@ function Map() {
                     containerElement={<div style={{ height: `500px`, width: `500px` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
                 />
-                <div className="row">
-                    <div className="col-12 col-md-4"> <input type="text" className="text-control" placeholder="Postcode" onChange={handleTextUpdate} />
                         {locations.map(location => {
                             return (
                                 <Card>
@@ -54,8 +47,6 @@ function Map() {
                         })}
                     </div>
                 </div>
-            </div>
-        </div>
     );
 }
 export default Map;
