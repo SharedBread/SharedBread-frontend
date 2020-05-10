@@ -18,11 +18,12 @@ function FoodsRequired() {
   const totalRequired = (data) => {
     const arr = data.map((location) => {
       return location.needs
-        .toLowerCase()
+        .toLowerCase() // removes any issues with capitilization
         .split("\n")
-        .flat()
-        .map((i) => i.trim());
+        .flat() // flattens arrays into single array
+        .map((i) => i.trim()); // map and trim removes white space from start and end of each string
     });
+    // loops through array and counts frquency of occurance
     let frequencyObj = {};
     arr.flat().forEach((i) => {
       !frequencyObj[i] ? (frequencyObj[i] = 1) : frequencyObj[i]++;
