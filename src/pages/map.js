@@ -15,6 +15,13 @@ function Map() {
         </GoogleMap>
     ));
 
+    const [locations, setLocation] = useState([
+        fetch("https://cors-anywhere.herokuapp.com/https://www.givefood.org.uk/api/1/foodbanks/search/?address=PR253NX")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+            })
+    ]);
 
     const  [text, setText] = useState("");
     const handleTextChange =(event) => {
@@ -51,7 +58,7 @@ function Map() {
                             <div> <input type="text" className="form-control" onClick={handleTextUpdate} />
                             </div>
                         </div>
-                       
+                     
                     </div>
                 </div>
             </div>
