@@ -30,6 +30,31 @@ h3 {
   font-family: 'Roboto', sans-serif;
   color: #497C5B;
 }
+/* Sub headings */
+h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 25px !important;
+  font-weight: 400 !important;
+  color: #394648;
+}
+
+/* Body titles */
+h3 {
+  font-family: 'Roboto', sans-serif;
+  color: #497C5B;
+}
+
+.button {
+  font-size: 24px !important;
+  color: #FFFFFF !important;
+  background-color: #39AA71 !important;
+}
+
+
+h4{
+  font-family: 'Quicksand';
+  color: #6EB257;
+}
 
 .button {
   font-size: 24px !important;
