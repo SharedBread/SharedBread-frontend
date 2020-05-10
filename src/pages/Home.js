@@ -1,12 +1,25 @@
-import React from 'react';
-
+import React from "react";
+import { Button } from "react-bootstrap";
+import FoodBankCarousel from "../components/FoodBankCarousel";
 
 function Home() {
   return (
     <>
-      <h1>We will create a UK without the need for food banks</h1>
+      <h1>We will create a UK without the need for food banks<span style={{fontSize:'12px'}}> - The Trussel Trust</span></h1>
       <br />
-      <h3>Your Local Food Banks</h3>
+      <h4>Your Local Food Banks</h4>
+      <FoodBankCarousel />
+      <div style={{marginTop: 30}}>
+      <Button variant="success" block>
+        Donate Food
+      </Button>
+      <Button variant="success" block>
+        Donate Money
+      </Button>
+      <Button variant="success" block>
+        Volunteer
+      </Button>
+      </div>
     </>
   );
 }
