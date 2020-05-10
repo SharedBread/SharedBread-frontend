@@ -17,7 +17,6 @@ function Map() {
 
   
 
-
     return (
         <div>
             <h1>Your Local Food Banks</h1>
@@ -28,8 +27,12 @@ function Map() {
                     mapElement={<div style={{ height: `100%` }} />}
                 />
                 <div className="row">
-                    <div className="col-12 col-md-4"> <input type="test" className="text-control" placeholder="Postcode" onChange={handleTextChange}/>
-                        <button type="Button" class="btn btn-primary" onClick={handleButtonClicked} > Go </button>
+                    <div className="col-12 col-md-4"> <input type="test" className="text-control" placeholder="Postcode" />
+                        <button type="Button" class="btn btn-primary"  > Go </button>
+                        <div className="card">
+                            <div> <input type="text" className="form-control"  />
+                            </div>
+                        </div>
                        
                     </div>
                 </div>
