@@ -28,8 +28,10 @@ function Map() {
                     mapElement={<div style={{ height: `100%` }} />}
                 />
                 <div className="row">
-                    <div className="col-12 col-md-4"> <input type="test" className="text-control" placeholder="Postcode" />
-        
+                    <div className="col-12 col-md-4"> <input type="test" className="text-control" placeholder="Postcode" onChange={handleTextChange}/>
+                        <button type="Button" class="btn btn-primary" onClick={handleButtonClicked} > Go </button>
+                       
+                    </div>
                 </div>
             </div>
         </div>
