@@ -37,6 +37,15 @@ function FoodsRequired() {
     return frequencyObj;
   };
 
+  let obj = {}
+  for (let [key, value] in state) {
+    if (state[key] > 2) {
+      obj[key] = obj[value]
+    }
+  }
+  
+  console.log('testobj', obj)
+
   const testObj = {
     beans: 5,
     milk: 10,
