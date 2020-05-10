@@ -29,7 +29,7 @@ function FoodsRequired() {
       !frequencyObj[i] ? (frequencyObj[i] = 1) : frequencyObj[i]++;
     });
 
-    return arr;
+    return frequencyObj;
   };
 
   return <></>;
