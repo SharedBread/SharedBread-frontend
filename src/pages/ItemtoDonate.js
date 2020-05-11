@@ -18,7 +18,9 @@ function ItemtoDonate() {
         console.log(event.target.value)
     }
 
- 
+    const handleTickOnClick = (event) => {
+        console.log(event.target.value)
+    }
 
     return (
         <div>
@@ -49,7 +51,7 @@ function ItemtoDonate() {
                             </div>
 
                             <div className="col-1">
-                                <AiOutlineCheck  />
+                                <AiOutlineCheck onClick={handleTickOnClick} />
                             </div>
                         </div>
                     </div>
