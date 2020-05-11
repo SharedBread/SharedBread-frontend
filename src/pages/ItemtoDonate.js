@@ -1,16 +1,22 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 
+//this page looks at shopping list for each user 
 function ItemtoDonate() {
+
+
+
+
     return (
         <div>
             <div>
                 <h1>Item to Donate</h1>
             </div>
-            <div className="row justify-conent-round">
-                <div> <input class="form-control mr-sm-12" type="search" placeholder="add" aria-label="Search" /></div>
-                <div> <button class="btn btn-outline-success my-2 my-sm-0" type="submit">+</button></div>
-
+            <div className="row-12">
+                <div className="col-12 col-md-4">
+                    <div> <input className="form-control" type="text" placeholder="Donate Items" aria-label="Search" /></div>
+                    <div> <Button className="btn btn-success" variant="success" type="submit">+</Button></div>
+                </div>
             </div>
         </div>
     )
