@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
-// import DeleteIcon from '@material-ui/icons/Delete';
-//import DeleteForeverIcon, {Grid, DeleteIcon} from '@material-ui/icons/DeleteForever';
-
+import { AiOutlineCheck } from "react-icons/ai";
+import { FiTrash } from "react-icons/fi";
 
 //this page looks at shopping list for each user 
 function ItemtoDonate() {
@@ -12,48 +11,41 @@ function ItemtoDonate() {
 
 
 
-    // const useStyles = makeStyles((theme) => ({
-    //     root: {
-    //       color: theme.palette.text.primary,
-    //     },
-    //   }));
-
-    // //   export default function SvgMaterialIcons() {
-    // //     const classes = useStyles();
-
-    //     return (
-    //       <Grid container className={classes.root}>
-    //         <Grid item xs={4}>
-    //           <Typography>Filled</Typography>
-    //         </Grid>
-    //        
-
-
-
     return (
         <div>
             <div>
                 <h1>Item to Donate</h1>
             </div>
-            <div className="row">
-                <div className="col-12 col-md-4">
-                    <div> <input className="col-12 col-md-4" className="form-control" type="text" placeholder="Donate Items" aria-label="Search" /></div>
-                    <div> <Button className="col-3 col-md-1" className="btn btn-success" variant="success" type="submit">+</Button></div>
-                    {items.map(item => {
-                        return (
-                            <Card>
-                                <Card.Body>
-                                    {/* <Grid item xs={8}>
-                                        <DeleteIcon />
-                                        <DeleteForeverIcon /> */}
-                                        <Card.Title>{item}</Card.Title>
-                                        {/* </Grid>*/}
-                                </Card.Body> 
-                            </Card>
-                        )
-                    })}
+            <div className="container">
+                <div className="row">
+                    <div className="col-10 col-md-6"> <input className="col-12 col-md-4" className="form-control" type="text" placeholder="Donate Items" aria-label="Search" /></div>
+                    <div className="col-2 col-md-6" > <Button className="btn btn-success" variant="success" type="submit">+</Button></div>
                 </div>
             </div>
+
+            {items.map(item => {
+                return (
+
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-1">
+                                <FiTrash />
+                            </div>
+                            <div className="col-10">
+                                <Card style={{ width: '23rem' }}>
+                                    <Card.Body>
+                                        <Card.Text>{item}</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+
+                            <div className="col-1">
+                                <AiOutlineCheck />
+                            </div>
+                        </div>
+                    </div>
+                )
+            })}
         </div>
     )
 }
