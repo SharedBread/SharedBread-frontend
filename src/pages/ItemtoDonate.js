@@ -14,7 +14,9 @@ function ItemtoDonate() {
         console.log(event.target.value)
     }
 
- 
+    const handleIconOnClick = (event) => {
+        console.log(event.target.value)
+    }
 
  
 
@@ -36,7 +38,7 @@ function ItemtoDonate() {
                     <div className="container">
                         <div className="row">
                             <div className="col-1">
-                                <FiTrash  />
+                                <FiTrash onClick={handleIconOnClick} />
                             </div>
                             <div className="col-10">
                                 <Card style={{ width: '23rem' }}>
