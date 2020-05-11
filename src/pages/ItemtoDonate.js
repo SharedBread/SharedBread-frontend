@@ -25,7 +25,7 @@ function ItemtoDonate() {
             </div>
             <div className="container">
                 <div className="row">
-                    <div className="col-10 col-md-6"> <input className="col-12 col-md-4" className="form-control" type="text" placeholder="Donate Items" aria-label="Search"  /></div>
+                    <div className="col-10 col-md-6"> <input className="col-12 col-md-4" className="form-control" type="text" placeholder="Donate Items" aria-label="Search" onChange={handleInputOnClick} /></div>
                     <div className="col-2 col-md-6" > <Button className="btn btn-success" variant="success" type="submit">+</Button></div>
                 </div>
             </div>
