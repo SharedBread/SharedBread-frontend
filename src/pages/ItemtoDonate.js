@@ -1,11 +1,34 @@
 import React, { useState } from "react";
-import { Button, Card, listItem } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
+// import DeleteIcon from '@material-ui/icons/Delete';
+//import DeleteForeverIcon, {Grid, DeleteIcon} from '@material-ui/icons/DeleteForever';
+
 
 //this page looks at shopping list for each user 
 function ItemtoDonate() {
 
 
     const [items, setItems] = useState(["orange", "apples", "candy"]);
+
+
+
+    // const useStyles = makeStyles((theme) => ({
+    //     root: {
+    //       color: theme.palette.text.primary,
+    //     },
+    //   }));
+
+    // //   export default function SvgMaterialIcons() {
+    // //     const classes = useStyles();
+
+    //     return (
+    //       <Grid container className={classes.root}>
+    //         <Grid item xs={4}>
+    //           <Typography>Filled</Typography>
+    //         </Grid>
+    //        
+
+
 
     return (
         <div>
@@ -20,8 +43,12 @@ function ItemtoDonate() {
                         return (
                             <Card>
                                 <Card.Body>
-                                    {item}
-                                </Card.Body>
+                                    {/* <Grid item xs={8}>
+                                        <DeleteIcon />
+                                        <DeleteForeverIcon /> */}
+                                        <Card.Title>{item}</Card.Title>
+                                        {/* </Grid>*/}
+                                </Card.Body> 
                             </Card>
                         )
                     })}
