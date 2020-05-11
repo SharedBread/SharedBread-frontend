@@ -44,7 +44,7 @@ function ItemtoDonate() {
                             </div>
                             <div className="col-10">
                                 <Card style={{ width: '23rem' }}>
-                                    <Card.Body>
+                                    <Card.Body className="cardColor">
                                         <Card.Text>{item}</Card.Text>
                                     </Card.Body>
                                 </Card>
@@ -61,5 +61,5 @@ function ItemtoDonate() {
     )
 }
 
-export default ItemtoDonate
+export default ItemtoDonate;
 
