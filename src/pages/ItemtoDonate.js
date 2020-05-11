@@ -16,6 +16,15 @@ function ItemtoDonate() {
                 <div className="col-12 col-md-4">
                     <div> <input className="col-12 col-md-4" className="form-control" type="text" placeholder="Donate Items" aria-label="Search" /></div>
                     <div> <Button className="col-3 col-md-1" className="btn btn-success" variant="success" type="submit">+</Button></div>
+                    {items.map(item => {
+                        return (
+                            <Card>
+                                <Card.Body>
+                                    {item}
+                                </Card.Body>
+                            </Card>
+                        )
+                    })}
                 </div>
             </div>
         </div>
