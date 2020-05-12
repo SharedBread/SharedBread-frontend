@@ -3,9 +3,11 @@ import React from 'react';
 function NeededItems() {
 
 
-    const postCode = "M130LE"
+const postCode = "M130LE"
 
-   
+const [locations, setLocation] = useState([])
+
+ 
 
 
 
