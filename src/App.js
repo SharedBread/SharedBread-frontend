@@ -29,15 +29,21 @@ function App() {
               required: true,
             },
             {
+              type: "name",
+              label: "Enter your name",
+              placeholder: "First or full name",
+              required: true,
+            },
+            {
               type: "password",
               label: "Enter your password",
-              placeholder: "",
+              placeholder: "Password should be at least 6 characters",
               required: true,
             },
             {
               type: "custom:postcode",
               label: "Enter your postcode",
-              placeholder: "",
+              placeholder: "Used for providing local information",
               required: true,
             },
           ]}
