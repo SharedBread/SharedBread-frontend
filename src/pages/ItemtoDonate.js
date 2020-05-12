@@ -4,11 +4,15 @@ import { AiOutlineCheck } from "react-icons/ai";
 import { FiTrash } from "react-icons/fi";
 
 //this page looks at shopping list for each user 
-function ItemtoDonate() {
+function ItemtoDonate(props) {
 
 
     const [items, setItems] = useState(["orange", "apples", "candy"]);
 
+
+    // const handleSubmit = (event) => {
+    //     props
+    // }
 
     const handleInputOnClick = (event) => {
         console.log(event.target.value)
