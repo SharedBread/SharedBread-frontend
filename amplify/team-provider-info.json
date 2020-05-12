@@ -14,6 +14,12 @@
         "categories": {
             "auth": {
                 "sharedbreadfrontend1c264349": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d1cfzr3zmy0dw0",
+                    "type": "cicd"
+                }
             }
         }
     }
