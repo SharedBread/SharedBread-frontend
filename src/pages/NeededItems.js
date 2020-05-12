@@ -4,7 +4,8 @@ function NeededItems() {
     return (
         <div>
             <h1>Needed Items</h1>
-        </div>
+        <div><p>Click + to slect the amount to add to your shopping list</p></div>
+      </div>  
     )
 }
 
