@@ -1,1 +1,9 @@
-{}
+{
+	"auth": {
+		"sharedbreadfrontend1c264349": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}

@@ -10,6 +10,11 @@
             "StackName": "amplify-sharedbreadfrontend-production-234310",
             "StackId": "arn:aws:cloudformation:eu-west-1:509637211068:stack/amplify-sharedbreadfrontend-production-234310/f6604050-94a1-11ea-961f-0655dfaca74c",
             "AmplifyAppId": "d1cfzr3zmy0dw0"
+        },
+        "categories": {
+            "auth": {
+                "sharedbreadfrontend1c264349": {}
+            }
         }
     }
 }
