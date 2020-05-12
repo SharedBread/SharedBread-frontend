@@ -7,7 +7,14 @@ const postCode = "M130LE"
 
 const [locations, setLocation] = useState([])
 
- 
+    useEffect(() => {
+        fetch(`https://cors-anywhere.herokuapp.com/https://www.givefood.org.uk/api/1/foodbanks/search/?address=${postCode}`)
+            .then((response) => response.json())
+            .then((data) => {
+                setLocation(data)
+            })
+    }, []);
+
 
 
 
