@@ -77,7 +77,7 @@ function FoodsRequired() {
         options={{
           title: {
             display: true,
-            text: "Foods Most Needed",
+            text: "Foods Needed In Your Area",
             fontSize: 20,
           },
           legend: {
