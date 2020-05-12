@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import FoodBankCarousel from "../components/FoodBankCarousel";
+import FoodsRequired from "../components/FoodsRequired"
 
 function Home() {
   return (
@@ -9,6 +10,7 @@ function Home() {
       <br />
       <h2>Your Local Food Banks</h2>
       <FoodBankCarousel />
+      <FoodsRequired />
       <div style={{marginTop: 30}}>
       <Button className="button" variant="success" block>
         Donate Food
