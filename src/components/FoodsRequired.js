@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import {Pie, Doughnut} from 'react-chartjs-2';
-
+import { Doughnut } from "react-chartjs-2";
 
 function FoodsRequired() {
-  const postcode = "PR253NX"; // this will be dynamic - either geolocation or pc from DB.
+  const postcode = "M85QE"; // this will be dynamic - either geolocation or pc from DB.
 
   useEffect(() => {
     fetch(
@@ -11,12 +10,11 @@ function FoodsRequired() {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         totalRequired(data);
       });
   }, []);
 
-  const [state, setState] = useState({})
+  const [state, setState] = useState({});
 
   // function returns an object that shows combined list of foods required from API.
   const totalRequired = (data) => {
@@ -27,80 +25,69 @@ function FoodsRequired() {
         .flat() // flattens arrays into single array
         .map((i) => i.trim()); // map and trim removes white space from start and end of each string
     });
-    // loops through array and counts frquency of occurance
+    // loops through array and counts frequency of occurance
     let frequencyObj = {};
     arr.flat().forEach((i) => {
       !frequencyObj[i] ? (frequencyObj[i] = 1) : frequencyObj[i]++;
     });
-    console.log(frequencyObj)
-    setState(frequencyObj)
+    setState(frequencyObj);
     return frequencyObj;
   };
 
-  let obj = {}
-  for (let [key, value] in state) {
-    if (state[key] > 2) {
-      obj[key] = obj[value]
+  // function returns new object with most need items only. (> 2)
+  const mostNeeded = (object) => {
+    let newObj = {};
+    for (const key in object) {
+      if (object[key] > 2) {
+        newObj[key] = object[key];
+      }
     }
-  }
-  
-  console.log('testobj', obj)
+    return newObj;
+  };
 
-  const testObj = {
-    beans: 5,
-    milk: 10,
-    'tinned tomatoes': 5
-  }  
-
-  function filterItems(arr) {
-    return Object.keys(arr).filter(el => arr[el] > 2);
-  }
-  
-  console.log(filterItems(state));
-  
-  
+  // chartJS data 
   const data = {
-    labels: Object.keys(testObj),
+    labels: Object.keys(mostNeeded(state)),
     datasets: [
       {
-        label: 'Items',
+        label: "Items",
         backgroundColor: [
-          '#B21F00',
-          '#C9DE00',
-          '#2FDE00',
-          '#00A6B4',
-          '#6800B4'
+          "#B21F00",
+          "#C9DE00",
+          "#2FDE00",
+          "#00A6B4",
+          "#6800B4",
         ],
         hoverBackgroundColor: [
-        '#501800',
-        '#4B5000',
-        '#175000',
-        '#003350',
-        '#35014F'
+          "#501800",
+          "#4B5000",
+          "#175000",
+          "#003350",
+          "#35014F",
         ],
-        data: [100, 59, 80, 81, 56]
-      }
-    ]
-  }
-  
+        data: Object.values(mostNeeded(state)),
+      },
+    ],
+  };
 
-  return (<>
-
-    <Doughnut
-          data={data}
-          options={{
-            title:{
-              display:true,
-              text:'Foods Most Needed',
-              fontSize:20
-            },
-            legend:{
-              display:true,
-              position:'right'
-            }
-          }}
-        />
-  </>);
+  return (
+    <>
+      <Doughnut
+        data={data}
+        options={{
+          title: {
+            display: true,
+            text: "Foods Most Needed",
+            fontSize: 20,
+          },
+          legend: {
+            display: true,
+            position: "right",
+          },
+        }}
+      />
+    </>
+  );
 }
 
 export default FoodsRequired;
