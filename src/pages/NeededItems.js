@@ -38,13 +38,8 @@ function NeededItems() {
                     <div className="container">
                         <div className="row">
                             <div className="col-5">
-                                <Card className="cardColor">
-                                    <Card.Body className="neededCardColor">
                                         <h5>{location.name} </h5>
                                         <p>{location.distance_mi} miles</p>
-
-                                    </Card.Body>
-                                </Card>
                             </div>
                             <div className="col-5">
                                 <form >
@@ -55,10 +50,10 @@ function NeededItems() {
                             </div>
                             <div className="col-2" className="addFeature"> + </div>
                         </div>
+                        <div className="col-12"> <hr/> </div>
                     </div>
                 )
             })}
-
         </div>
     )
 }
