@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 function NeededItems() {
 
@@ -44,7 +44,7 @@ function NeededItems() {
                             <div className="col-5">
                                 <form >
                                     <Card className="form">
-                                        {location.needs} 
+                                        {(location.needs)} 
                                     </Card>
                                 </form>
                             </div>

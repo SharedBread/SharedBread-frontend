@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter as Router } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from "react-bootstrap";
-
 import RouteContainer from "./components/RouteContainer"
 
 function App() {
@@ -11,7 +10,6 @@ function App() {
     <Router>
       <Container>
         <RouteContainer /> 
-
       </Container>
     </Router>
     
