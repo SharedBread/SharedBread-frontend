@@ -29,16 +29,16 @@ function ItemtoDonate(props) {
     };
 
     const addItemsOnClick = (data) => {
-        const addNewItem = {text:data, ID:4}
+        const addNewItem = { text: data, ID: 4 }
         const newItems = [...items, addNewItem]
         setItems(newItems)
     }
 
     const handleDeleteOnClick = (data) => {
-      const filteredItem=items.filter(item=>{
-          return item.ID !== data;
-      })
-      setItems(filteredItem);
+        const filteredItem = items.filter(item => {
+            return item.ID !== data;
+        })
+        setItems(filteredItem);
     };
 
     const handleTickOnClick = (event) => {
@@ -52,7 +52,7 @@ function ItemtoDonate(props) {
             </div>
             <div className="container">
                 <div className="row">
-                    <div className="col-10 col-md-6"> <input className="col-12 col-md-4" className="form-control" type="text" placeholder="Donate Items" aria-label="Search" value = {itemsText} onChange={handleInputOnClick} /></div>
+                    <div className="col-10 col-md-6"> <input className="col-12 col-md-4" className="form-control" type="text" placeholder="Donate Items" aria-label="Search" value={itemsText} onChange={handleInputOnClick} /></div>
                     <div className="col-2 col-md-6" > <Button className="btn btn-success" variant="success" type="submit" onClick={() => addItemsOnClick(itemsText)}>+</Button></div>
                 </div>
             </div>
@@ -63,10 +63,10 @@ function ItemtoDonate(props) {
                     <div className="container">
                         <div className="row">
                             <div className="col-1">
-                                <FiTrash onClick={() => handleDeleteOnClick (item.ID)} />
+                                <FiTrash onClick={() => handleDeleteOnClick(item.ID)} />
                             </div>
                             <div className="col-10" className="inputColor">
-                                <Card style={{ width: '16rem' }}>
+                                <Card style={{ width: '16rem' }} className="cardSize">
                                     <Card.Body className="cardColor">
                                         <Card.Text>{item.text}</Card.Text>
                                     </Card.Body>
