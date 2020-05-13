@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from 'react-bootstrap';
-import { AiOutlineCheck } from "react-icons/ai";
+import { Card, Button } from 'react-bootstrap';
 
 function NeededItems() {
 
@@ -40,11 +39,11 @@ function NeededItems() {
                             <div className="col-5">
                                 <form >
                                     <Card className="form">
-                                        {location.needs}
+                                        {location.needs} 
                                     </Card>
                                 </form>
                             </div>
-                            <div className="col-2"> <AiOutlineCheck/> </div>
+                            <div className="col-2" className="addFeature"> + </div>
                         </div>
                     </div>
                 )
