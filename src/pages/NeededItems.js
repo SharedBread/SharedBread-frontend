@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+import { AiOutlineCheck } from "react-icons/ai";
 
 function NeededItems() {
 
@@ -43,6 +44,7 @@ function NeededItems() {
                                     </Card>
                                 </form>
                             </div>
+                            <div className="col-2"> <AiOutlineCheck/> </div>
                         </div>
                     </div>
                 )
