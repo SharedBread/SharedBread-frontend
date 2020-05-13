@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button} from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { AiOutlineCheck } from "react-icons/ai";
 import { FiTrash } from "react-icons/fi";
 
@@ -40,7 +40,7 @@ function ItemtoDonate(props) {
     }
 
     const handleDeleteOnClick = (event) => {
-       // props.deleteItemFunc(props.ID);
+        // props.deleteItemFunc(props.ID);
         setItems(event.target.value)
     }
 
@@ -63,15 +63,17 @@ function ItemtoDonate(props) {
             {items.map(item => {
                 return (
 
-                    <div className="container">  
+                    <div className="container">
                         <div className="row">
                             <div className="col-1">
                                 <FiTrash onClick={handleDeleteOnClick} />
                             </div>
                             <div className="col-10" className="inputColor">
-                                    <div className="inputColor">
-                                        <input type="data" className="form-control" value={item.text} />
-                                    </div>
+                                <Card style={{ width: '16rem' }}>
+                                    <Card.Body className="cardColor">
+                                        <Card.Text>{item.text}</Card.Text>
+                                    </Card.Body>
+                                </Card>
                             </div>
                             <div className="col-1">
                                 <AiOutlineCheck onClick={handleTickOnClick} />
