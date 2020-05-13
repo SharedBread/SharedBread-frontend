@@ -3,7 +3,7 @@ import { Card, Button } from 'react-bootstrap';
 
 function NeededItems() {
 
-
+    
     const postCode = "M130LE"
 
     const [locations, setLocation] = useState([])
@@ -12,10 +12,20 @@ function NeededItems() {
         fetch(`https://cors-anywhere.herokuapp.com/https://www.givefood.org.uk/api/1/foodbanks/search/?address=${postCode}`)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
-                setLocation(data)
+                // console.log(data)
+                setLocation(data);
+                needItems(data);
+                
             })
     }, []);
+
+    const needItems = (data) => {
+        //access object from nested array
+        //display each item separately 
+        //remove unwanted characters 
+        //pass it into the return section as separate items 
+        console.log(data)
+    }
 
     return (
         <div>
@@ -30,7 +40,7 @@ function NeededItems() {
                             <div className="col-5">
                                 <Card className="cardColor">
                                     <Card.Body className="neededCardColor">
-                                        <p >{location.name} </p>
+                                        <h5>{location.name} </h5>
                                         <p>{location.distance_mi} miles</p>
 
                                     </Card.Body>
