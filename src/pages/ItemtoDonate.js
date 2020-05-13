@@ -23,25 +23,17 @@ function ItemtoDonate(props) {
     ]);
 
 
-    // const deleteItem = ID => {
-    //     const filteredItems = items.filter(item=>{
-    //         return item.ID !==ID;
-    //     });
-    //     setItems(filteredItems)
-    // }
-
-    // const addItem = (text) => {
-    //     const newItems = [...items, newItems];
-    //     setItems(newItems);
-    // }
+ 
 
     const handleInputOnClick = (event) => {
         console.log(event.target.value)
     }
 
-    const handleDeleteOnClick = (event) => {
-        // props.deleteItemFunc(props.ID);
-        setItems(event.target.value)
+    const handleDeleteOnClick = (data) => {
+      const filteredItem=items.filter(item=>{
+          return item.ID !== data;
+      })
+      setItems(filteredItem);
     }
 
     const handleTickOnClick = (event) => {
@@ -66,7 +58,7 @@ function ItemtoDonate(props) {
                     <div className="container">
                         <div className="row">
                             <div className="col-1">
-                                <FiTrash onClick={handleDeleteOnClick} />
+                                <FiTrash onClick={() => handleDeleteOnClick (item.ID)} />
                             </div>
                             <div className="col-10" className="inputColor">
                                 <Card style={{ width: '16rem' }}>
