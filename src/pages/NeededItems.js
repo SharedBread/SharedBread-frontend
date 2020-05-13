@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 function NeededItems() {
 
@@ -17,25 +17,37 @@ function NeededItems() {
             })
     }, []);
 
-
     return (
         <div>
             <h1>Needed Items</h1>
             <div><p>Click + to slect the amount to add to your shopping list</p></div>
 
-            <div className="container">
-                {locations.map(location => {
-                    return (
-                        <Card>
-                            <Card.Body>
-                                <Card.Title>  <h4>{location.name} </h4></Card.Title>
-                                <Card.Text>  {location.distance_mi} miles</Card.Text>
-                            </Card.Body>
-                        </Card>
-                    )
-                })}
 
-            </div>
+            {locations.map(location => {
+                return (
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-5">
+                                <Card className="cardColor">
+                                    <Card.Body className="neededCardColor">
+                                        <p >{location.name} </p>
+                                        <p>{location.distance_mi} miles</p>
+
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="col-5">
+                                <form >
+                                    <Card className="form">
+                                        {location.needs}
+                                    </Card>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                )
+            })}
+
         </div>
     )
 }
