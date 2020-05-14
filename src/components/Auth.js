@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useMemo } from "react";
+import React, { createContext, useState, useEffect, useMemo, useContext } from "react";
 import { Auth } from "aws-amplify";
 
 // create initial context to hold the value that gets passed into components
@@ -6,7 +6,7 @@ export const UserContext = createContext(null)
 
 // this function is the controller for authorising users and passing
 // the data into the UserContext.
-function AuthProvider(children) {
+function AuthProvider({children}) {
     
     const [authData, setAuthData] = useState(null)
 
@@ -27,10 +27,14 @@ function AuthProvider(children) {
     // return the data to pass into child components (children)
     return (
         <>
-        <UserContext.Provider value={values} {...children} />
+        <UserContext.Provider value={values}>{children}</UserContext.Provider>
         </>
     )
 
 }
+
+// create a hook to get specific user auth data in components
+export const useAuthContext = () => useContext(UserContext);
+
 
 export default AuthProvider;
