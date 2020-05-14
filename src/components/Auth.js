@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useMemo } from "react";
 import { Auth } from "aws-amplify";
 
 // create initial context to hold the value that gets passed into components
@@ -18,6 +18,10 @@ function AuthProvider() {
             .catch((err) => setAuthData(null))
         
     }, []);
+
+    // useMemo stores the authData in memory to ensure that components
+    // dont re-render unless the data has changed.
+    const values = useMemo(() => ({authData}), [authData])
     
 
     return (
