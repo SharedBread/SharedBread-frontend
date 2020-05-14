@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
-import { AiOutlineCheck } from "react-icons/ai";
+import {GrAdd} from "react-icons/gr"
 import { FiTrash } from "react-icons/fi";
 
 //this page looks at shopping list for each user 
@@ -41,7 +41,12 @@ function ItemtoDonate(props) {
         setItems(filteredItem);
     };
 
-    const handleTickOnClick = (event) => {
+    const counter = [count, setCount] = useState(0);
+    let count = 0;
+   
+
+    const handleCountClick = (event) => {
+        setCount(count + 1 )
         console.log(event.target.value)
     };
 
@@ -73,7 +78,7 @@ function ItemtoDonate(props) {
                                 </Card>
                             </div>
                             <div className="col-1">
-                                <AiOutlineCheck onClick={handleTickOnClick} />
+                                <GrAdd onClick={() => handleCountClick (counter)}/>
                             </div>
                         </div>
                     </div>
