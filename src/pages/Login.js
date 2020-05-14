@@ -1,5 +1,5 @@
 import React from "react";
-import { AmplifySignUp, AmplifyConfirmSignIn } from "@aws-amplify/ui-react";
+import { AmplifySignIn, AmplifySignUp, AmplifyConfirmSignIn } from "@aws-amplify/ui-react";
 
 function Login() {
   return (
@@ -12,6 +12,7 @@ function Login() {
         Thank you for visiting the SharedBread app. To help your local food
         banks, please sign up below and let's get started.
       </p>
+      <AmplifySignIn />
       <AmplifySignUp
         slot="sign-up"
         usernameAlias="email"
