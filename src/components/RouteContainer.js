@@ -5,6 +5,7 @@ import { useAuthContext } from "../components/Auth";
 // Pages
 import Home from "../pages/Home"
 import Map from "../pages/map"
+import Login from "../pages/Login"
 
 // PrivateROute function created to wrap router-router (Route) with
 // conditions to check if 'user' is available or not.
@@ -12,7 +13,7 @@ import Map from "../pages/map"
 // goes to an authorisation page.
 const PrivateRoute = ({ component, ...options }) => {
   const { user } = useAuthContext();
-  const redirectToComponent = user ? component : "required";
+  const redirectToComponent = user ? component : Login;
 
   return <Route {...options} component={redirectToComponent} />;
 };
