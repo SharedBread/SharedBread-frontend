@@ -5,7 +5,7 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import Home from "../pages/Home"
 import Map from "../pages/map"
 import ItemtoDonate from '../pages/ItemtoDonate';
-import NeededList from '../pages/NeededList';
+import NeededItems from '../pages/NeededItems';
 
 function RouteContainer({ location }) {
   return (
@@ -14,7 +14,7 @@ function RouteContainer({ location }) {
         <Route exact path="/" component={Home}/>
         <Route path="/Map" component={Map}/>
         <Route path="/ItemtoDonate" component={ItemtoDonate}/>
-        <Route path="/NeededList" component={NeededList}/>
+        <Route path="/NeededItems" component={NeededItems}/>
     </Switch>
     
   );

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
-import {GrAdd} from "react-icons/gr"
+import {GrFormAdd} from "react-icons/gr"
 import { FiTrash } from "react-icons/fi";
+import {RiSubtractLine} from "react-icons/ri"
 
 //this page looks at shopping list for each user 
 function ItemtoDonate(props) {
@@ -41,14 +42,14 @@ function ItemtoDonate(props) {
         setItems(filteredItem);
     };
 
-    const counter = [count, setCount] = useState(0);
-    let count = 0;
+    // const counter = [count, setCount] = useState(0);
+    // let count = 0;
    
 
-    const handleCountClick = (event) => {
-        setCount(count + 1 )
-        console.log(event.target.value)
-    };
+    // const handleCountClick = (event) => {
+    //     setCount(count + 1 )
+    //     console.log(event.target.value)
+    // };
 
     return (
         <div>
@@ -78,7 +79,9 @@ function ItemtoDonate(props) {
                                 </Card>
                             </div>
                             <div className="col-1">
-                                <GrAdd onClick={() => handleCountClick (counter)}/>
+                                <GrFormAdd />
+                                <RiSubtractLine/>
+                               {/* onClick= {() => handleCountClick (counter)} */}
                             </div>
                         </div>
                     </div>
