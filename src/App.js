@@ -9,6 +9,10 @@ import AuthProvider from "./components/Auth";
 
 import RouteContainer from "./components/RouteContainer";
 
+// AuthProvider wraps around all routes to provide
+// user authentication and user info at each route
+// passing the data down with react context.
+// see components/Auth for implementation.
 function App() {
   return (
     <div>
