@@ -12,8 +12,8 @@ import Login from "../pages/Login"
 // If no user object is available, (user not signed in), the route 
 // goes to an authorisation page.
 const PrivateRoute = ({ component, ...options }) => {
-  const { user } = useAuthContext();
-  const redirectToComponent = user ? component : Login;
+  const { authData } = useAuthContext();
+  const redirectToComponent = authData ? component : Login;
 
   return <Route {...options} component={redirectToComponent} />;
 };
