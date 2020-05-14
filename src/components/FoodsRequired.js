@@ -17,7 +17,7 @@ function FoodsRequired() {
       .then((data) => {
         totalRequired(data);
       });
-  });
+  }, []);
 
   const [state, setState] = useState({});
 
