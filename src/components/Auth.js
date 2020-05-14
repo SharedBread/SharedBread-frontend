@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
+import { Auth } from "aws-amplify";
 
 // create initial context to hold the value that gets passed into components
 export const UserContext = createContext(null)
@@ -8,6 +9,15 @@ export const UserContext = createContext(null)
 function AuthProvider() {
     
     const [authData, setAuthData] = useState(null)
+
+    // run once to get the current user from Amplify
+    useEffect(() => {
+
+        Auth.currentUserInfo()
+            .then((user) => setAuthData(user))
+            .catch((err) => setAuthData(null))
+        
+    }, []);
     
 
     return (
