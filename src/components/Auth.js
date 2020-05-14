@@ -6,7 +6,7 @@ export const UserContext = createContext(null)
 
 // this function is the controller for authorising users and passing
 // the data into the UserContext.
-function AuthProvider() {
+function AuthProvider(children) {
     
     const [authData, setAuthData] = useState(null)
 
@@ -24,8 +24,11 @@ function AuthProvider() {
     const values = useMemo(() => ({authData}), [authData])
     
 
+    // return the data to pass into child components (children)
     return (
-        <></>
+        <>
+        <UserContext.Provider value={values} {...children} />
+        </>
     )
 
 }
