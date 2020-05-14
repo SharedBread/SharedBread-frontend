@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
+import pattern from 'patternomaly';
 
 function FoodsRequired() {
   const postcode = "M85QE"; // this will be dynamic - either geolocation or pc from DB.
@@ -52,18 +53,18 @@ function FoodsRequired() {
       {
         label: "Items",
         backgroundColor: [
-          "#B21F00",
-          "#C9DE00",
-          "#2FDE00",
-          "#00A6B4",
-          "#6800B4",
+          pattern.draw('square', '#a3aba2'),
+          pattern.draw('diagonal-right-left', '#39AA71'),
+          pattern.draw('dot', '#497C5B'),
+          pattern.draw('zigzag-horizontal', '#E8BC00'),
+          pattern.draw('dash', '#6EB257')
         ],
         hoverBackgroundColor: [
-          "#501800",
-          "#4B5000",
-          "#175000",
-          "#003350",
-          "#35014F",
+          pattern.draw('square',"#464a46"),
+          pattern.draw('diagonal-right-left', "#184a31"),
+          pattern.draw('dot', '#1b2e22'),
+          pattern.draw('zigzag-horizontal','#826900'), 
+          pattern.draw('dash', '#37592b')
         ],
         data: Object.values(mostNeeded(state)),
       },
@@ -72,14 +73,10 @@ function FoodsRequired() {
 
   return (
     <>
+      <h2 style={{marginTop: 30}}>Needed Items in Your Area</h2>
       <Doughnut
         data={data}
         options={{
-          title: {
-            display: true,
-            text: "Foods Needed In Your Area",
-            fontSize: 20,
-          },
           legend: {
             display: true,
             position: "right",
