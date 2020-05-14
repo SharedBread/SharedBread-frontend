@@ -34,6 +34,7 @@ function AuthProvider({children}) {
 }
 
 // create a hook to get specific user auth data in components
+// VERY IMPORTANT - the function must begin with use
 export const useAuthContext = () => useContext(UserContext);
 
 
