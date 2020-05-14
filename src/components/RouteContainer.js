@@ -21,8 +21,8 @@ function RouteContainer({ location }) {
   return (
 
     <Switch location={location}>
-        <Route exact path="/" component={Home}/>
-        <Route path="/Map" component={Map}/>
+        <PrivateRoute exact path="/" component={Home}/>
+        <PrivateRoute path="/Map" component={Map}/>
     </Switch>
     
   );
