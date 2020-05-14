@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Card, Carousel } from "react-bootstrap";
+import { useAuthContext } from "../components/Auth";
 
 function FoodBankCarousel() {
   const [location, setLocation] = useState([{ name: "Loading..." }]);
 
-  const postcode = "PR253NX"; // this will be dynamic - either geolocation or pc from DB.
+  // get users postcode
+  const { authData } = useAuthContext();
+  const postcode = useState(authData.attributes["custom:postcode"]);
 
   useEffect(() => {
     fetch(
