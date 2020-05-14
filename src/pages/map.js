@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, Marker, withGoogleMap } from 'react-google-maps';
 import {Card } from 'react-bootstrap';
+import { useAuthContext } from "../components/Auth";
+
 
 function Map() {
 
@@ -13,17 +15,21 @@ function Map() {
         </GoogleMap>
     ));
 
-    const postCode = "M130LE"
-
     const [locations, setLocation] = useState([])
 
-    useEffect(() => {
-        fetch(`https://cors-anywhere.herokuapp.com/https://www.givefood.org.uk/api/1/foodbanks/search/?address=${postCode}`)
-            .then((response) => response.json())
-            .then((data) => {
-                setLocation(data)
-            })
-    }, []);
+    // get users postcode
+  const { authData } = useAuthContext();
+  const postcode = useState(authData.attributes["custom:postcode"]);
+
+  useEffect(() => {
+    fetch(
+      `https://cors-anywhere.herokuapp.com/https://www.givefood.org.uk/api/1/foodbanks/search/?address=${postcode}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setLocation(data);
+      });
+  }, []);
 
     return (
         <div>
