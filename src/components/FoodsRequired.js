@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
+import { useAuthContext } from "../components/Auth";
 
 function FoodsRequired() {
-  const postcode = "M85QE"; // this will be dynamic - either geolocation or pc from DB.
+  
+  // get users postcode
+  const { authData } = useAuthContext();
+  const postcode = useState(authData.attributes["custom:postcode"]);
 
+  
   useEffect(() => {
     fetch(
       `https://cors-anywhere.herokuapp.com/https://www.givefood.org.uk/api/1/foodbanks/search/?address=${postcode}`
@@ -12,7 +17,7 @@ function FoodsRequired() {
       .then((data) => {
         totalRequired(data);
       });
-  }, []);
+  });
 
   const [state, setState] = useState({});
 
@@ -45,7 +50,7 @@ function FoodsRequired() {
     return newObj;
   };
 
-  // chartJS data 
+  // chartJS data
   const data = {
     labels: Object.keys(mostNeeded(state)),
     datasets: [
