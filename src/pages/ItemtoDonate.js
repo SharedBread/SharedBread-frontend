@@ -83,7 +83,7 @@ function ItemtoDonate(props) {
                             <div className="col-1">
                                 <FiTrash onClick={() => handleDeleteOnClick(item.ID)} />
                             </div>
-                            <div className="col-10" className="inputColor">
+                            <div className="col-9" className="inputColor">
                                 <Card style={{ width: '16rem' }} className="cardSize">
                                     <Card.Body className="cardColor">
                                         <Card.Text>{item.text}</Card.Text>
@@ -95,6 +95,9 @@ function ItemtoDonate(props) {
                                 <p>{count[item.ID]}</p>
                                 <RiSubtractLine onClick={() => decreaseBy1(item.ID)} />
                             </div>
+                            <div className="col-1" >
+                                <Button className="btn-xl" variant="success" type="submit">submit</Button>
+                            </div>
                         </div>
                     </div>
                 )
@@ -102,6 +105,5 @@ function ItemtoDonate(props) {
         </div>
     )
 }
-
 export default ItemtoDonate;
 
