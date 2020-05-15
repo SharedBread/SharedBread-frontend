@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
+import {GrFormAdd} from 'react-icons/gr';
 
 function NeededItems() {
 
-    
+
     const postCode = "M130LE"
 
     const [locations, setLocation] = useState([])
@@ -15,15 +16,15 @@ function NeededItems() {
                 // console.log(data)
                 setLocation(data);
                 needItems(data);
-                
+
             })
     }, []);
 
     const needItems = (data) => {
-      
+
         let i = 0;
-        data.forEach(function(){
-            let item = (data[i].needs).replace(/\s.*\//g, '')
+        data.forEach(function () {
+            let item = (data[i].needs)
             console.log(item)
         })
         //access object from nested array
@@ -43,20 +44,26 @@ function NeededItems() {
                 return (
                     <div className="container">
                         <div className="row">
-                            <div className="col-5">
-                                        <h5>{location.name} </h5>
-                                        <p>{location.distance_mi} miles</p>
+                            <div className="col-6">
+                                <h5>{location.name} </h5>
+                                <p>{location.distance_mi} miles</p>
                             </div>
-                            <div className="col-5">
+                            <div className="col-6">
                                 <form >
+                                     {location.needs.split('\n').map(need =>{
+                                         return (
+
                                     <Card className="form">
-                                        {()=> needItems } 
-                                    </Card>
+                                             {need}   <div className="row" className="addFeature" style={{color: 'white'}} > <GrFormAdd/> </div>
+                                     </Card>
+                                         )
+                                     })}
                                 </form>
                             </div>
-                            <div className="col-2" className="addFeature"> + </div>
+                            {/* <Button variant="success" > + </Button> */}
+                            {/* <div className="col-2" className="addFeature" > <GrFormAdd/> </div> */}
                         </div>
-                        <div className="col-12"> <hr/> </div>
+                        <div className="col-12"> <hr /> </div>
                     </div>
                 )
             })}
