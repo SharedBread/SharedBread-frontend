@@ -20,6 +20,12 @@ function NeededItems() {
     }, []);
 
     const needItems = (data) => {
+      
+        let i = 0;
+        data.forEach(function(){
+            let item = (data[i].needs).replace(/\s.*\//g, '')
+            console.log(item)
+        })
         //access object from nested array
         //display each item separately 
         //remove unwanted characters 
@@ -44,7 +50,7 @@ function NeededItems() {
                             <div className="col-5">
                                 <form >
                                     <Card className="form">
-                                        {(location.needs)} 
+                                        {()=> needItems } 
                                     </Card>
                                 </form>
                             </div>
