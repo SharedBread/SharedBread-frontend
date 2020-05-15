@@ -10,17 +10,17 @@ function ItemtoDonate(props) {
 
     const [items, setItems] = useState([
         {
-            ID: 1,
+            ID: 0,
             text: "orange",
             sum: 1
         },
         {
-            ID: 2,
+            ID: 1,
             text: "apples",
             sum: 1
         },
         {
-            ID: 3,
+            ID: 2,
             text: "candy",
             sum: 1,
         }
@@ -47,25 +47,20 @@ function ItemtoDonate(props) {
     };
 
 
-    const [count, setCounter] = useState(1);
+    const [count, setCounter] = useState([1, 1, 1]);
     
 
-    const increaseBy1 = (ID) => {
-        let sum = count;
-       // if (items.ID === ID ) {
-            items[ID].sum ++
-            
-       // }
-        setCounter(items[ID].sum);
-        console.log(items[ID].sum)
+    const increaseBy1 = (ID) => {      
+           items[ID].sum ++ 
+        setCounter(items.map(i => i.sum));
     };
 
     const decreaseBy1 = (ID) => {
-        let minus = count 
-        if (items.ID === ID && count > 0) {
-            return count - 1
-            }  
-        setCounter(count)
+        if(items[ID].sum <= 1){
+         return;
+        }
+        items[ID].sum --
+        setCounter(items.map(i => i.sum))
         console.log(ID)
     }
 
@@ -83,7 +78,6 @@ function ItemtoDonate(props) {
 
             {items.map(item => {
                 return (
-
                     <div className="container">
                         <div className="row">
                             <div className="col-1">
@@ -98,7 +92,7 @@ function ItemtoDonate(props) {
                             </div>
                             <div className="col-1">
                                 <GrFormAdd onClick={() => increaseBy1(item.ID)} />
-                                <p>{count}</p>
+                                <p>{count[item.ID]}</p>
                                 <RiSubtractLine onClick={() => decreaseBy1(item.ID)} />
                             </div>
                         </div>
