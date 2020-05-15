@@ -7,9 +7,9 @@ function Map() {
     const MyMapComponent = withGoogleMap(props => (
         <GoogleMap
             defaultZoom={8}
-            defaultCenter={{ lat: 55.3781, lng: -3.4360 }}
+            defaultCenter={{ lat: 53.483959, lng: -2.244644 }}
         >
-            {props.isMarkerShown && <Marker position={{ lat: 55.3781, lng: -3.4360 }} />}
+            {props.isMarkerShown && <Marker position={{ lat: 53.483959, lng: -2.244644 }} />}
         </GoogleMap>
     ));
 
