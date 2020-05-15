@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
-import {GrFormAdd} from "react-icons/gr"
+import { GrFormAdd } from "react-icons/gr"
 import { FiTrash } from "react-icons/fi";
-import {RiSubtractLine} from "react-icons/ri"
+import { RiSubtractLine } from "react-icons/ri"
 
 //this page looks at shopping list for each user 
 function ItemtoDonate(props) {
@@ -11,17 +11,21 @@ function ItemtoDonate(props) {
     const [items, setItems] = useState([
         {
             ID: 1,
-            text: "orange"
+            text: "orange",
+            sum: 1
         },
         {
             ID: 2,
-            text: "apples"
+            text: "apples",
+            sum: 1
         },
         {
             ID: 3,
-            text: "candy"
+            text: "candy",
+            sum: 1,
         }
     ]);
+
 
     const [itemsText, setItemText] = useState('');
 
@@ -42,14 +46,28 @@ function ItemtoDonate(props) {
         setItems(filteredItem);
     };
 
-    // const counter = [count, setCount] = useState(0);
-    // let count = 0;
-   
 
-    // const handleCountClick = (event) => {
-    //     setCount(count + 1 )
-    //     console.log(event.target.value)
-    // };
+    const [count, setCounter] = useState(1);
+    
+
+    const increaseBy1 = (ID) => {
+        let sum = count;
+       // if (items.ID === ID ) {
+            items[ID].sum ++
+            
+       // }
+        setCounter(items[ID].sum);
+        console.log(items[ID].sum)
+    };
+
+    const decreaseBy1 = (ID) => {
+        let minus = count 
+        if (items.ID === ID && count > 0) {
+            return count - 1
+            }  
+        setCounter(count)
+        console.log(ID)
+    }
 
     return (
         <div>
@@ -79,9 +97,9 @@ function ItemtoDonate(props) {
                                 </Card>
                             </div>
                             <div className="col-1">
-                                <GrFormAdd />
-                                <RiSubtractLine/>
-                               {/* onClick= {() => handleCountClick (counter)} */}
+                                <GrFormAdd onClick={() => increaseBy1(item.ID)} />
+                                <p>{count}</p>
+                                <RiSubtractLine onClick={() => decreaseBy1(item.ID)} />
                             </div>
                         </div>
                     </div>
