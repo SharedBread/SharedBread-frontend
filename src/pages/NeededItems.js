@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Button } from 'react-bootstrap';
-import {GrFormAdd} from 'react-icons/gr';
+import { GrFormAdd } from 'react-icons/gr';
 
 function NeededItems() {
 
@@ -22,11 +22,7 @@ function NeededItems() {
 
     const needItems = (data) => {
 
-        let i = 0;
-        data.forEach(function () {
-            let item = (data[i].needs)
-            console.log(item)
-        })
+
         //access object from nested array
         //display each item separately 
         //remove unwanted characters 
@@ -50,14 +46,14 @@ function NeededItems() {
                             </div>
                             <div className="col-6">
                                 <form >
-                                     {location.needs.split('\n').map(need =>{
-                                         return (
+                                    {location.needs.replace(/And/g,',').replace(/Very Low Stocks/g,',').split(/[,\n/]+/).map(need => {
+                                            return (
 
-                                    <Card className="form">
-                                             {need}   <div className="row" className="addFeature" style={{color: 'white'}} > <GrFormAdd/> </div>
-                                     </Card>
-                                         )
-                                     })}
+                                                <Card className="form">
+                                                    {need}   <div className="row" className="addFeature" style={{ color: 'white' }} > <GrFormAdd /> </div>
+                                                </Card>
+                                            )
+                                        })}
                                 </form>
                             </div>
                             {/* <Button variant="success" > + </Button> */}
