@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, Marker, withGoogleMap } from 'react-google-maps';
-import {Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 function Map() {
 
@@ -28,25 +28,26 @@ function Map() {
     return (
         <div>
             <h1>Your Local Food Banks</h1>
-            <div>
-                <MyMapComponent
+            <div style={{width: "50vw", height: "50vh"}}>
+
+                <MyMapComponent 
                     containerElement={<div style={{ height: `500px`, width: `500px` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
                 />
-                        {locations.map(location => {
-                            return (
-                                <Card>
-                                    <Card.Body>
-                                     <Card.Title>  <h4>{location.name} </h4></Card.Title>  
-                                     <Card.Text>  {location.address}</Card.Text>  
-                                     <Card.Text>  {location.postcode}</Card.Text>  
-                                     <Card.Text>  {location.phone}</Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            )
-                        })}
-                    </div>
-                </div>
+                {locations.map(location => {
+                    return (
+                        <Card>
+                            <Card.Body>
+                                <Card.Title>  <h4>{location.name} </h4></Card.Title>
+                                <Card.Text>  {location.address}</Card.Text>
+                                <Card.Text>  {location.postcode}</Card.Text>
+                                <Card.Text>  {location.phone}</Card.Text>
+                            </Card.Body>
+                        </Card>
+                    )
+                })}
+            </div>
+        </div>
     );
 }
 export default Map;
