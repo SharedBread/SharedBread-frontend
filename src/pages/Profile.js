@@ -9,7 +9,7 @@ function Profile() {
   const [points, setPoints] = useState(0);
 
 
-  // get users AuthID
+  // get users info
   const { authData } = useAuthContext();
   const AuthID = authData.attributes.sub.toString();
   const name = authData.attributes.name
