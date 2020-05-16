@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+// File for demo purposes only - SEE DEPLOYMENT BRANCH FOR WORKING COPY
+
+>>>>>>> master
 import React, { createContext, useState, useEffect, useMemo, useContext } from "react";
 import { Auth } from "aws-amplify";
 

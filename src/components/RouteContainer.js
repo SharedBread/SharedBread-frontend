@@ -6,6 +6,7 @@ import { useAuthContext } from "../components/Auth";
 import Home from "../pages/Home"
 import Map from "../pages/map"
 import Login from "../pages/Login"
+import NeededItems from '../pages/NeededItems';
 import Profile from "../pages/Profile";
 
 // PrivateROute function created to wrap router-router (Route) with
@@ -25,6 +26,7 @@ function RouteContainer({ location }) {
     <Switch location={location}>
         <PrivateRoute exact path="/" component={Home}/>
         <PrivateRoute path="/Map" component={Map}/>
+        <PrivateRoute path="/NeededItems" component={NeededItems}/>
         <PrivateRoute path="/Profile" component={Profile}/>
     </Switch>
     

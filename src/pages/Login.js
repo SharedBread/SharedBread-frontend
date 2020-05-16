@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+// File for demo purposes only - SEE DEPLOYMENT BRANCH FOR WORKING COPY
+
+
+>>>>>>> master
 import React from "react";
 import { AmplifyAuthenticator, AmplifySignIn, AmplifySignUp, AmplifyConfirmSignIn } from "@aws-amplify/ui-react";
 
