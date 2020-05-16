@@ -7,6 +7,14 @@ import { useAuthContext } from "../components/Auth";
 function Profile() {
   // set initial user points
   const [points, setPoints] = useState(0);
+
+
+  // get users AuthID
+  const { authData } = useAuthContext();
+  const AuthID = authData.attributes.sub.toString();
+  const name = authData.attributes.name
+
+  console.log(name, AuthID)   
   
   // AuthID is dynamic - SEE DEPLOYMENT BRANCH FOR LIVE DYNAMIC VERSION
   const AuthId = '124-afgfhak-123'
@@ -14,13 +22,17 @@ function Profile() {
   useEffect(() => {
     // fetch donations from api
     axios
-      .get(
-        `https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/profile/${AuthId}`
+      .post(
+        `https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/profile`,
+        {
+            FirstName: name,
+            AuthID: AuthID
+        }
       )
       .then((response) => {
         userPoints(response.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log('error:', err));
   }, []);
 
   // function to determine overall user score using 3 data points
