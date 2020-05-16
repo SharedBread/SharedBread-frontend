@@ -5,7 +5,6 @@ import "./Profile.css";
 import axios from "axios";
 
 function Profile() {
-
   // set initial user points
   const [points, setPoints] = useState(0);
 
@@ -28,19 +27,19 @@ function Profile() {
 
     // second data point (total amount of items donated)
     let amountOfItems = 0;
-    data.forEach(i => {
-        amountOfItems += i.Amount
-    }) 
+    data.forEach((i) => {
+      amountOfItems += i.Amount;
+    });
 
     // third data point (number of unique items donated)
-    const uniqueItems = [...new Set(data.map(i => i.FoodItem))].length
+    const uniqueItems = [...new Set(data.map((i) => i.FoodItem))].length;
 
-    setPoints(numOfDonations + (amountOfItems-numOfDonations) + uniqueItems)
+    setPoints(numOfDonations + (amountOfItems - numOfDonations) + uniqueItems);
   };
 
   const userfullname = "Leslie Knope";
   const location = "Pawnee";
-  
+
   const hasAchieved = (usersPoints, thresholdPoints) => {
     return usersPoints >= thresholdPoints ? "achievedBadge" : "greyBadge";
   };
