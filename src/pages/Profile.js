@@ -8,18 +8,20 @@ function Profile() {
   const [points, setPoints] = useState(0);
   
   // AuthID is dynamic - SEE DEPLOYMENT BRANCH FOR LIVE DYNAMIC VERSION
-  const AuthId = '124-afgfhak-123'
-
   useEffect(() => {
     // fetch donations from api
     axios
-      .get(
-        `https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/profile/${AuthId}`
+      .post(
+        `https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/profile`,
+        {
+            FirstName: 'Test',
+            AuthID: '124-afgfhak-123'
+        }
       )
       .then((response) => {
         userPoints(response.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log('error:', err));
   }, []);
 
   // function to determine overall user score using 3 data points
