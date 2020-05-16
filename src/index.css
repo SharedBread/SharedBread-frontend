@@ -84,7 +84,9 @@ h5 {
 }
 
 .addFeature{
-  font-size: 30px;
+  font-size: 26px;
+  color: white !important;
+ text-align: left;
 }
 
 
