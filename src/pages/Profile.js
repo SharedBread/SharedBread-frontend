@@ -20,7 +20,9 @@ function Profile() {
           .catch((err) => console.log(err));
       }, []);
     
-    const userPoints = (data) => {
+    
+      // function to determine overall user score
+      const userPoints = (data) => {
         console.log(data) 
     }
 
