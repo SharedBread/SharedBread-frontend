@@ -13,7 +13,6 @@ function App() {
       <Router>
         <Container>
           <RouteContainer />
-
         </Container>
       </Router>
       <NavBar />

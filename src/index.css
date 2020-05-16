@@ -56,10 +56,37 @@ h4{
   color: #497C5B;
 }
 
+h5 {
+  font-size: 18px;
+  color:#394648 ;
+}
 .button {
   font-size: 24px !important;
   color: #FFFFFF !important;
   background-color: #39AA71 !important;
+}
+
+.cardColor{ 
+  background-color: #BDC5BC;
+  
+}
+
+.neededCardColor{
+  background-color: #E3E8E4 !important;
+}
+
+.form {
+  float: left;
+  background-color: #39AA71 !important;
+  max-width: 700px;
+  padding: 20px;
+  font-size: 15px;
+}
+
+.addFeature{
+  font-size: 26px;
+  color: white !important;
+ text-align: left;
 }
 
 
