@@ -14,10 +14,6 @@ function Profile() {
   const AuthID = authData.attributes.sub.toString();
   const name = authData.attributes.name
 
-  console.log(name, AuthID)   
-  
-  // AuthID is dynamic - SEE DEPLOYMENT BRANCH FOR LIVE DYNAMIC VERSION
-  const AuthId = '124-afgfhak-123'
 
   useEffect(() => {
     // fetch donations from api
