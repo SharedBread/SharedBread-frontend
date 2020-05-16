@@ -24,7 +24,7 @@ function Profile() {
 
   // function to determine overall user score using 3 data points
   const userPoints = (data) => {
-    // first data point (total number of donations)
+    // first data point (number of individual donations made)
     const numOfDonations = data.length;
 
     // second data point (total amount of items donated)
