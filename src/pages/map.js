@@ -4,16 +4,7 @@ import { Card } from 'react-bootstrap';
 
 function Map() {
 
-    const MyMapComponent = withGoogleMap(props => (
-        <GoogleMap
-            defaultZoom={8}
-            defaultCenter={{ lat: 53.483959, lng: -2.244644 }}
-        >
-            {props.isMarkerShown && <Marker position={{ lat: 53.483959, lng: -2.244644 }} />}
-        </GoogleMap>
-    ));
-
-    const postCode = "M130LE"
+  const postCode = "M130LE"
 
     const [locations, setLocation] = useState([])
 
@@ -24,7 +15,27 @@ function Map() {
                 setLocation(data)
             })
     }, []);
+    
+    const MyMapComponent = withGoogleMap(data => (
+        <GoogleMap
+            defaultZoom={8}
+            defaultCenter={{ lat: 53.483959, lng: -2.244644 }}
+        >
 
+<Marker
+      position={{ lat: 53.483959, lng: -2.244644 }}
+    />
+            {/* {data.postcode.map(postcodes => {
+                return (
+                <Marker 
+                key={postcodes}
+                position={{ lat: 53.483959.coordinates[1], lng: -2.244644.coordinates[0] }}/>
+                )
+            })} */}
+        </GoogleMap>
+    ));
+
+  
     return (
         <div>
             <h1>Your Local Food Banks</h1>
@@ -33,6 +44,9 @@ function Map() {
                 <MyMapComponent 
                     containerElement={<div style={{ height: `500px`, width: `500px` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
+
+
+
                 />
                 {locations.map(location => {
                     return (
