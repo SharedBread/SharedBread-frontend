@@ -6,7 +6,8 @@ import axios from "axios";
 function Profile() {
   // set initial user points
   const [points, setPoints] = useState(0);
-
+  
+  // AuthID is dynamic - SEE DEPLOYMENT BRANCH FOR LIVE DYNAMIC VERSION
   const AuthId = '124-afgfhak-123'
 
   useEffect(() => {
