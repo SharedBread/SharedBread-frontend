@@ -16,6 +16,7 @@ h1 {
   font-size: 30px;
   color: #497C5B;
   font-weight: 700 !important;
+  padding-top: 5%;
 }
 /* Sub headings */
 h2 {
@@ -75,13 +76,6 @@ h5 {
   background-color: #E3E8E4 !important;
 }
 
-.form {
-  float: left;
-  background-color: #39AA71 !important;
-  max-width: 700px;
-  padding: 20px;
-  font-size: 15px;
-}
 
 .addFeature{
   font-size: 26px;
