@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
 import Badge from "react-bootstrap/Badge";
 import "./Profile.css";
 import axios from "axios";
@@ -8,11 +7,13 @@ function Profile() {
   // set initial user points
   const [points, setPoints] = useState(0);
 
+  const AuthId = '124-afgfhak-123'
+
   useEffect(() => {
     // fetch donations from api
     axios
       .get(
-        "https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/profile/124-afgfhak-123"
+        `https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/profile/${AuthId}`
       )
       .then((response) => {
         userPoints(response.data);
