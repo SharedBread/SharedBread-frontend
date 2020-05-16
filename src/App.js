@@ -15,7 +15,6 @@ import RouteContainer from "./components/RouteContainer";
 // see components/Auth for implementation.
 function App() {
   return (
-<<<<<<< HEAD
     <div>
         <Router>
           <AuthProvider>
@@ -25,19 +24,6 @@ function App() {
           </AuthProvider>
         </Router>
         <NavBar />
-=======
-    <div style={{marginBottom: 86}}>
-      <Router>
-        <Container>
-          <RouteContainer />
-        </Container>
-      </Router>
-      <div className="col"> <hr />
-            Data provided by  
-            <a target="rel=noopener" href="https://www.givefood.org.uk/"><strong>Give Food</strong></a>
-      </div> 
-      <NavBar />
->>>>>>> master
     </div>
   );
 }
