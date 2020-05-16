@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
-import { GrFormAdd } from "react-icons/gr"
+import { GrFormAdd } from "react-icons/gr";
 import { FiTrash } from "react-icons/fi";
-import { RiSubtractLine } from "react-icons/ri"
+import { RiSubtractLine } from "react-icons/ri";
+import popup from "reactjs-popup";
 
 //this page looks at shopping list for each user 
 function ItemtoDonate(props) {
@@ -61,7 +62,13 @@ function ItemtoDonate(props) {
         }
         items[ID].sum --
         setCounter(items.map(i => i.sum))
-        console.log(ID)
+    };
+
+    const popupSection = () => {
+        <popup trigger={<button>Trigger</button>}position="right center">
+            <div>Popup here</div>
+        </popup>
+        console.log(popupSection)
     }
 
     return (
@@ -91,12 +98,13 @@ function ItemtoDonate(props) {
                                 </Card>
                             </div>
                             <div className="col-1">
-                                <GrFormAdd onClick={() => increaseBy1(item.ID)} />
+                                <GrFormAdd calssName= "addButton" onClick={() => increaseBy1(item.ID)} />
                                 <p>{count[item.ID]}</p>
                                 <RiSubtractLine onClick={() => decreaseBy1(item.ID)} />
                             </div>
                             <div className="col-1" >
-                                <Button className="btn-xl" variant="success" type="submit">submit</Button>
+                                
+                                <Button className="btn-xl" variant="success" type="submit" >Submit</Button>
                             </div>
                         </div>
                     </div>
