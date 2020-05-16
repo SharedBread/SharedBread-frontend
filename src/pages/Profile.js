@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Badge from "react-bootstrap/Badge";
 import "./Profile.css";
 import axios from "axios";
+import { useAuthContext } from "../components/Auth";
 
 function Profile() {
   // set initial user points
