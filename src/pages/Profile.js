@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import Badge from "react-bootstrap/Badge";
 import "./Profile.css";
@@ -84,6 +85,33 @@ function Profile() {
                 alt="Badge for 1 donation achieved"
               ></img>
               <div className="badgeTag"> Your first donation!</div>
+=======
+import React from "react";
+import Badge from 'react-bootstrap/Badge';
+import './Profile.css';
+
+
+function Profile() {
+    const userfullname = "Leslie Knope";
+    const location = "Pawnee";
+    const points = 5;
+
+    const hasAchieved = (usersPoints, thresholdPoints) => {
+        return usersPoints >= thresholdPoints ? 'achievedBadge' : 'greyBadge'
+    }
+
+    return (
+        <>
+
+{/* Profile user icon, information and point score section */}
+            <div className="upper-box">
+                <div className="image-container">
+                    <img className="profileImg" src="profileicon.png" alt="Avatar"></img>
+                    <Badge variant="warning" className="rounded-circle">
+                        <div className="text-circle"> {points} </div>
+                    </Badge>{' '}
+                </div>
+>>>>>>> master
             </div>
             <div className="col text-center">
               <img
