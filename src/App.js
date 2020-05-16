@@ -9,12 +9,16 @@ import RouteContainer from "./components/RouteContainer"
 
 function App() {
   return (
-    <div>
+    <div style={{marginBottom: 86}}>
       <Router>
         <Container>
           <RouteContainer />
         </Container>
       </Router>
+      <div className="col"> <hr />
+            Data provided by  
+            <a target="rel=noopener" href="https://www.givefood.org.uk/"><strong>Give Food</strong></a>
+      </div> 
       <NavBar />
     </div>
 

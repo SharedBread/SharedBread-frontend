@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import Badge from 'react-bootstrap/Badge';
 import './Profile.css';
 
@@ -19,7 +18,7 @@ function Profile() {
 {/* Profile user icon, information and point score section */}
             <div className="upper-box">
                 <div className="image-container">
-                    <img className="profileImg" src="leslie.jpg" alt="Avatar"></img>
+                    <img className="profileImg" src="profileicon.png" alt="Avatar"></img>
                     <Badge variant="warning" className="rounded-circle">
                         <div className="text-circle"> {points} </div>
                     </Badge>{' '}
