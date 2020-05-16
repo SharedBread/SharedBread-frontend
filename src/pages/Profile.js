@@ -1,10 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import Badge from "react-bootstrap/Badge";
 import "./Profile.css";
 import axios from "axios";
 
 function Profile() {
+
+  // set initial user points
+  const [points, setPoints] = useState(0);
+
   useEffect(() => {
     // fetch tasks from backend
     axios
@@ -19,13 +23,13 @@ function Profile() {
 
   // function to determine overall user score
   const userPoints = (data) => {
-    console.log(data);
+    const numOfDonations = data.length;
+    setPoints(numOfDonations)
   };
 
   const userfullname = "Leslie Knope";
   const location = "Pawnee";
-  const points = 5;
-
+  
   const hasAchieved = (usersPoints, thresholdPoints) => {
     return usersPoints >= thresholdPoints ? "achievedBadge" : "greyBadge";
   };
