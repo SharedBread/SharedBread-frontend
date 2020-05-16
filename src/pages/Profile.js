@@ -10,7 +10,7 @@ function Profile() {
   const [points, setPoints] = useState(0);
 
   useEffect(() => {
-    // fetch tasks from backend
+    // fetch donations from api
     axios
       .get(
         "https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/profile/124-afgfhak-123"
@@ -21,10 +21,21 @@ function Profile() {
       .catch((err) => console.log(err));
   }, []);
 
-  // function to determine overall user score
+  // function to determine overall user score using 3 data points
   const userPoints = (data) => {
+    // first data point (total number of donations)
     const numOfDonations = data.length;
-    setPoints(numOfDonations)
+
+    // second data point (total amount of items donated)
+    let amountOfItems = 0;
+    data.forEach(i => {
+        amountOfItems += i.Amount
+    }) 
+
+    // third data point (number of unique items donated)
+    const uniqueItems = [...new Set(data.map(i => i.FoodItem))].length
+
+    setPoints(numOfDonations + (amountOfItems-numOfDonations) + uniqueItems)
   };
 
   const userfullname = "Leslie Knope";
