@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { GoogleMap, Marker, withGoogleMap } from 'react-google-maps';
+import { GoogleMap, Marker, withGoogleMap, withScriptjs } from 'react-google-maps';
 import { Card } from 'react-bootstrap';
 
 function Map() {
 
-  const postCode = "M130LE"
+    const postCode = "M130LE"
 
     const [locations, setLocation] = useState([])
 
@@ -15,33 +15,35 @@ function Map() {
                 setLocation(data)
             })
     }, []);
-    
-    const MyMapComponent = withGoogleMap(data => (
+
+    const MyMapComponent = withScriptjs(withGoogleMap(data => (
         <GoogleMap
             defaultZoom={8}
             defaultCenter={{ lat: 53.483959, lng: -2.244644 }}
         >
 
-<Marker
-      position={{ lat: 53.483959, lng: -2.244644 }}
-    />
-            {/* {data.postcode.map(postcodes => {
+            <Marker
+                position={{ lat: 53.483959, lng: -2.244644 }}
+            />
+            {/* {location.postcode.map(location => {
                 return (
                 <Marker 
-                key={postcodes}
-                position={{ lat: 53.483959.coordinates[1], lng: -2.244644.coordinates[0] }}/>
+                key={location}
+                position={{ lat: location.geometry.coordinates[1], lng: location.geometry.coordinates[0] }}/>
                 )
             })} */}
         </GoogleMap>
-    ));
+    )));
 
-  
+
     return (
         <div>
             <h1>Your Local Food Banks</h1>
-            <div style={{width: "50vw", height: "50vh"}}>
+            <div style={{ width: "50vw", height: "50vh" }}>
 
-                <MyMapComponent 
+                <MyMapComponent
+                    googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyAtg5FG3OqqhhSQ7uCaTM-Kkp-Es6Wpsnc`}
+                    loadingElement={<div style={{ height: `100%` }} />}
                     containerElement={<div style={{ height: `500px`, width: `500px` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
 
