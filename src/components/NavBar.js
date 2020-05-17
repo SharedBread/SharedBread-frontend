@@ -11,7 +11,7 @@ function NavBar() {
                     <Nav.Link href="/"><FaHome size="2em" /></Nav.Link>
                     <Nav.Link href="/Map"><FaMapMarkerAlt size="1.8em"/></Nav.Link>
                     <Nav.Link href="/NeededItems"><FaRegListAlt size="1.9em" /></Nav.Link>
-                    <Nav.Link href=""><MdAddShoppingCart size="2em" /></Nav.Link>
+                    <Nav.Link href="/ItemtoDonate"><MdAddShoppingCart size="2em" /></Nav.Link>
                     <Nav.Link href="Profile"><MdAccountCircle size="2.2em" /></Nav.Link>
                 </Nav>
         </>
