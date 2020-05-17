@@ -7,7 +7,7 @@ function FoodsRequired() {
   
   // get users postcode
   const { authData } = useAuthContext();
-  const postcode = useState(authData.attributes["custom:postcode"]);
+  const postcode = authData.attributes["custom:postcode"];
 
   
   useEffect(() => {
