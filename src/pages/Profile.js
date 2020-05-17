@@ -3,6 +3,7 @@ import Badge from "react-bootstrap/Badge";
 import "./Profile.css";
 import axios from "axios";
 import { useAuthContext } from "../components/Auth";
+import { AmplifySignOut } from "@aws-amplify/ui-react";
 
 function Profile() {
   // set initial user points
@@ -58,6 +59,7 @@ function Profile() {
 
   return (
     <>
+    <AmplifySignOut />
       {/* Profile user icon, information and point score section */}
       <div className="upper-box">
         <div className="image-container">
