@@ -4,6 +4,14 @@ import "./Profile.css";
 import axios from "axios";
 import { useAuthContext } from "../components/Auth";
 import { AmplifySignOut } from "@aws-amplify/ui-react";
+import { Hub } from "aws-amplify";
+
+Hub.listen('auth', (data) => {
+  const { payload } = data
+  if (payload.event === 'signOut') {
+    window.location.reload(true);
+  }
+})
 
 function Profile() {
   // set initial user points
