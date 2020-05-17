@@ -71,11 +71,7 @@ function Profile() {
       {/* Profile user icon, information and point score section */}
       <div className="upper-box">
         <div className="image-container">
-<<<<<<< HEAD
-        <img className="profileImg" src="profileicon.png" alt="Avatar"></img>
-=======
           <img className="profileImg" src="profileicon.png" alt="Avatar"></img>
->>>>>>> master
           <Badge variant="warning" className="rounded-circle">
             <div className="text-circle"> {points} </div>
           </Badge>{" "}
