@@ -29,7 +29,7 @@ function Profile() {
         userPoints(response.data);
       })
       .catch((err) => console.log('error:', err));
-  }, []);
+  }, [AuthID, name]);
 
   // function to determine overall user score using 3 data points
   const userPoints = (data) => {

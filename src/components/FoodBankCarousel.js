@@ -17,7 +17,7 @@ function FoodBankCarousel() {
       .then((data) => {
         setLocation(data);
       });
-  }, []);
+  }, [postcode]);
 
   // Random images to display in Food bank header image.
   const imgObj = {
