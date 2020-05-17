@@ -18,8 +18,8 @@ function NeededItems() {
       });
   }, []);
 
-  const addItem = (event) => {
-    console.log(event.target.value);
+  const addItem = (data) => {
+    console.log(data);
   };
 
   return (
@@ -51,7 +51,7 @@ function NeededItems() {
                               {" "}
                               {need}{" "}
                             </div>
-                            <div className="plus" onClick={addItem}> + </div>
+                            <div className="plus" onClick={() => addItem({need})}> + </div>
                           </div>
                         </Card>
                       );
