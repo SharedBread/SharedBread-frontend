@@ -63,6 +63,7 @@ function NeededItems() {
                 <form>
                   {location.needs
                     .replace(/And/g, ",")
+                    .trim()
                     .split(/[,\n/]+/)
                     .map((need) => {
                       return (
