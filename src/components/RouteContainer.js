@@ -6,6 +6,7 @@ import Home from "../pages/Home"
 import Map from "../pages/map"
 import ItemtoDonate from '../pages/ItemtoDonate';
 import NeededItems from '../pages/NeededItems';
+import Profile from "../pages/Profile";
 
 function RouteContainer({ location }) {
   return (
@@ -15,6 +16,7 @@ function RouteContainer({ location }) {
         <Route path="/Map" component={Map}/>
         <Route path="/ItemtoDonate" component={ItemtoDonate}/>
         <Route path="/NeededItems" component={NeededItems}/>
+        <Route path="/Profile" component={Profile}/>
     </Switch>
     
   );
