@@ -24,7 +24,7 @@ function NeededItems() {
       });
   }, []);
 
-  // 
+  // function to add item into DB 
   const addItem = (data) => {
     console.log(data);
     axios
