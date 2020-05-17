@@ -12,7 +12,6 @@ function Login() {
 
   Hub.listen('auth', (data) => {
     const { payload } = data
-    console.log('An new auth event has happened:', data)
     if (payload.event === 'signIn') {
       setRedirect(true)
       window.location.reload(true);
