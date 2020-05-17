@@ -3,10 +3,10 @@ import { Button, Card } from "react-bootstrap";
 import { GrFormAdd } from "react-icons/gr";
 import { FiTrash } from "react-icons/fi";
 import { RiSubtractLine } from "react-icons/ri";
-import popup from "reactjs-popup";
+import Popup from "reactjs-popup";
 
 //this page looks at shopping list for each user 
-function ItemtoDonate(props) {
+function ItemtoDonate() {
 
 
     const [items, setItems] = useState([
@@ -49,27 +49,20 @@ function ItemtoDonate(props) {
 
 
     const [count, setCounter] = useState([1, 1, 1]);
-    
 
-    const increaseBy1 = (ID) => {      
-           items[ID].sum ++ 
+
+    const increaseBy1 = (ID) => {
+        items[ID].sum++
         setCounter(items.map(i => i.sum));
     };
 
     const decreaseBy1 = (ID) => {
-        if(items[ID].sum <= 1){
-         return;
+        if (items[ID].sum <= 1) {
+            return;
         }
-        items[ID].sum --
+        items[ID].sum--
         setCounter(items.map(i => i.sum))
     };
-
-    const popupSection = () => {
-        <popup trigger={<button>Trigger</button>}position="right center">
-            <div>Popup here</div>
-        </popup>
-        console.log(popupSection)
-    }
 
     return (
         <div>
@@ -88,7 +81,7 @@ function ItemtoDonate(props) {
                     <div className="container">
                         <div className="row">
                             <div className="col-1">
-                                <FiTrash onClick={() => handleDeleteOnClick(item.ID)} />
+                                <FiTrash className="deleteIcon" onClick={() => handleDeleteOnClick(item.ID)} />
                             </div>
                             <div className="col-9" className="inputColor">
                                 <Card style={{ width: '16rem' }} className="cardSize">
@@ -98,13 +91,47 @@ function ItemtoDonate(props) {
                                 </Card>
                             </div>
                             <div className="col-1">
-                                <GrFormAdd calssName= "addButton" onClick={() => increaseBy1(item.ID)} />
+                                <GrFormAdd className="addButton" onClick={() => increaseBy1(item.ID)} />
                                 <p>{count[item.ID]}</p>
-                                <RiSubtractLine onClick={() => decreaseBy1(item.ID)} />
+                                <RiSubtractLine className="substractButton"  onClick={() => decreaseBy1(item.ID)} />
                             </div>
+
+
                             <div className="col-1" >
-                                
-                                <Button className="btn-xl" variant="success" type="submit" >Submit</Button>
+                                <Popup trigger={<Button className="btn-sm" variant="success" type="sumbit" >Submit</Button>} modal>
+                                    {close => ( 
+                                        
+                                        <div className="modal">
+                                            <a className="close" onClick={close}>
+                                                &times;
+                                                </a>
+                                            <div className="header"> Model Title</div>
+                                            <div className="content">
+                                                {" "}
+                        Have you donated this item?
+                                        </div>
+                                            <div className="actions">
+                                                <Popup trigger={<Button className="button"> Yes </Button>}
+                                                    position="top center"
+                                                    closeOnDocumentClick>
+                                                    <span>Thank you for donating! <br/>
+                                                              Check you profile page to check your points.</span>
+
+                                                </Popup>
+
+                                                <Button
+                                                    className="button"
+                                                    onClick={() => {
+                                                        console.log("modal closed ");
+                                                        close();
+                                                    }}
+                                                >
+                                                    No
+                                                </Button>
+                                            </div>
+                                        </div>
+                                    )}
+                                </Popup>
                             </div>
                         </div>
                     </div>
