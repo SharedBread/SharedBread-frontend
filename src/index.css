@@ -92,7 +92,9 @@ margin: 5px;
 }
 .modal > .content {
   width: 100%;
+  height:100%;
   padding: 10px 5px;
+  color: red;
 }
 .modal > .actions {
   width: 100%;
