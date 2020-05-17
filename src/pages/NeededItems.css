@@ -1,0 +1,25 @@
+.form {
+    background-color: #39AA71 !important;
+    padding: 1px;
+    font-size: 16px;
+    color: white;
+  }
+  
+  .need {
+    padding: 9px;
+  }
+  .plus {
+    margin: auto 0;
+    font-size: 26px;
+    padding: 4px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1.3px solid #394648;
+    color: #394648;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+}
+  
