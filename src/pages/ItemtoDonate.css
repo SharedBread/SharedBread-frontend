@@ -1,0 +1,35 @@
+.new-card{
+    background-color: #BDC5BC !important;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    padding: 12px;
+    line-height: 1.5;
+    border-radius: .25rem;
+  }
+
+.button{
+    color: white;
+    border: none
+}
+
+.modalText{
+    font-size: 15px;
+}
+
+.donatedButton{
+    font-size: 20px;
+    color: #FFFFFF !important;
+    background-color: #39AA71 !important;
+    border:none;
+    height: 39px;
+    line-height: 10px;
+}
+
+.inputContainer{
+    font-size: 16px;
+    padding-right: 5px;
+}
+
+  
