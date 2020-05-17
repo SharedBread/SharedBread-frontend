@@ -22,8 +22,6 @@ function AuthProvider({children}) {
     // useMemo stores the authData in memory to ensure that components
     // dont re-render unless the data has changed.
     const values = useMemo(() => ({authData}), [authData])
-    
-
     // return the data to pass into child components (children)
     return (
         <>
