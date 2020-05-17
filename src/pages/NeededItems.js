@@ -14,6 +14,8 @@ function NeededItems() {
    // get users postcode
   const { authData } = useAuthContext();
   const postcode = authData.attributes["custom:postcode"];
+  const AuthID = authData.attributes.sub.toString();
+
 
     const [locations, setLocation] = useState([])
 
@@ -33,7 +35,7 @@ function NeededItems() {
         "https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/addToBasket",
         {
           FoodItem: data.need,
-          AuthID: "f87aa583-2330-43b3-a8a8-04d58247fc79", // Auth is dynamic on DEPLOYMENT BRANCH
+          AuthID: AuthID
         }
       )
       .then((response) => {
