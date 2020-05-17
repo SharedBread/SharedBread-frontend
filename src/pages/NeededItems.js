@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 import "./NeededItems.css";
 import Snackbar from "@material-ui/core/Snackbar";
+import axios from "axios";
 
 function NeededItems() {
   const postCode = "M130LE";
@@ -23,9 +24,24 @@ function NeededItems() {
       });
   }, []);
 
+  // 
   const addItem = (data) => {
     console.log(data);
-    setOpen(true);
+    axios
+      .post(
+        "https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/addToBasket",
+        {
+          FoodItem: data.need
+          AuthID: 
+    
+        }
+      )
+      .then((response) => {
+        setOpen(true);
+      })
+      .catch((err) => {
+        console.log("Error", err);
+      });
   };
 
   return (
