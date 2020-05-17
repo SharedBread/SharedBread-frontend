@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 import "./NeededItems.css";
+import Snackbar from "@material-ui/core/Snackbar";
 
 function NeededItems() {
   const postCode = "M130LE";
+
+  // state to open / close snackbar
+  const [open, setOpen] = useState(false);
+  const handleClose = () => setOpen(false);
 
   const [locations, setLocation] = useState([]);
 
@@ -20,6 +25,7 @@ function NeededItems() {
 
   const addItem = (data) => {
     console.log(data);
+    setOpen(true);
   };
 
   return (
@@ -47,11 +53,14 @@ function NeededItems() {
                       return (
                         <Card>
                           <div className="form col d-flex justify-content-between">
-                            <div className="need">
+                            <div className="need"> {need} </div>
+                            <div
+                              className="plus"
+                              onClick={() => addItem({ need })}
+                            >
                               {" "}
-                              {need}{" "}
+                              +{" "}
                             </div>
-                            <div className="plus" onClick={() => addItem({need})}> + </div>
                           </div>
                         </Card>
                       );
@@ -66,6 +75,17 @@ function NeededItems() {
           </div>
         );
       })}
+
+      <Snackbar
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "left",
+        }}
+        open={open}
+        autoHideDuration={2000}
+        onClose={handleClose}
+        message="Added To Shopping Basket"
+      />
     </div>
   );
 }
