@@ -47,11 +47,11 @@ function NeededItems() {
                       return (
                         <Card>
                           <div className="form col d-flex justify-content-between">
-                            <div className="need" onClick={addItem}>
+                            <div className="need">
                               {" "}
                               {need}{" "}
                             </div>
-                            <div className="plus"> + </div>
+                            <div className="plus" onClick={addItem}> + </div>
                           </div>
                         </Card>
                       );
