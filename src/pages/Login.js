@@ -14,12 +14,8 @@ function Login() {
     const { payload } = data
     console.log('An new auth event has happened:', data)
     if (payload.event === 'signIn') {
-      console.log('a user has signed in!')
       setRedirect(true)
       window.location.reload(true);
-    }
-    if (payload.event === 'signOut') {
-      console.log('a user has signed out!')
     }
   })
   
