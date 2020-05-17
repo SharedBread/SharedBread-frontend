@@ -31,8 +31,8 @@ function NeededItems() {
       .post(
         "https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/addToBasket",
         {
-          FoodItem: data.need
-          AuthID: 
+          FoodItem: data.need,
+          AuthID: 'f87aa583-2330-43b3-a8a8-04d58247fc79'
     
         }
       )
