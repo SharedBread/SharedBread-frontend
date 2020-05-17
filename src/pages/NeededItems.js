@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from 'react-bootstrap';
 import './NeededItems.css';
+import { useAuthContext } from "../components/Auth";
 
 function NeededItems() {
 
 
-    const postCode = "M130LE"
+   // get users postcode
+  const { authData } = useAuthContext();
+  const postcode = authData.attributes["custom:postcode"];
 
     const [locations, setLocation] = useState([])
 
     useEffect(() => {
-        fetch(`https://cors-anywhere.herokuapp.com/https://www.givefood.org.uk/api/1/foodbanks/search/?address=${postCode}`)
+        fetch(`https://cors-anywhere.herokuapp.com/https://www.givefood.org.uk/api/1/foodbanks/search/?address=${postcode}`)
             .then((response) => response.json())
             .then((data) => {
                 setLocation(data);
