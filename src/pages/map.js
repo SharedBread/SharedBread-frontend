@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, Marker, withGoogleMap, withScriptjs } from 'react-google-maps';
 import { Card } from 'react-bootstrap';
-import Geocode from "react-geocode";
 
 function Map() {
 
