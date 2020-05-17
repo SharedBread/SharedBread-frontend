@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { AmplifyAuthenticator, AmplifySignIn, AmplifySignUp, AmplifyConfirmSignIn } from "@aws-amplify/ui-react";
+import { Hub } from "aws-amplify"
+import { Redirect } from "react-router-dom"
+
+
+
 
 function Login() {
+
+  const [ redirect, setRedirect ] = useState(false)
+
+  Hub.listen('auth', (data) => {
+    const { payload } = data
+    console.log('An new auth event has happened:', data)
+    if (payload.event === 'signIn') {
+      console.log('a user has signed in!')
+      setRedirect(true)
+      window.location.reload(true);
+    }
+    if (payload.event === 'signOut') {
+      console.log('a user has signed out!')
+    }
+  })
+  
   return (
     <>
+    {redirect ? <Redirect  push to="/" /> : null}
       <h1>
         We will create a UK without the need for food banks
         <span style={{ fontSize: "12px" }}> - The Trussel Trust</span>
