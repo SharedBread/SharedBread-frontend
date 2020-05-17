@@ -38,7 +38,7 @@ function NeededItems() {
       {locations.map((location) => {
         return (
           <div className="container">
-            <div className="row">
+            <div className="row" key={`${location.charity_number}`}>
               <div className="col-4">
                 <h5>{location.name} </h5>
                 <p>{location.distance_mi} miles</p>
