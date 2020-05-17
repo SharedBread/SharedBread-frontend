@@ -6,7 +6,6 @@ import { Container } from "react-bootstrap";
 import NavBar from "./components/NavBar.js";
 import AuthProvider from "./components/Auth";
 
-
 import RouteContainer from "./components/RouteContainer";
 
 // AuthProvider wraps around all routes to provide
@@ -15,15 +14,23 @@ import RouteContainer from "./components/RouteContainer";
 // see components/Auth for implementation.
 function App() {
   return (
-    <div>
-        <Router>
-          <AuthProvider>
+    <div style={{ marginBottom: 86 }}>
+      <Router>
+        <AuthProvider>
           <Container>
             <RouteContainer />
           </Container>
-          </AuthProvider>
-        </Router>
-        <NavBar />
+        </AuthProvider>
+      </Router>
+      <div className="col">
+        {" "}
+        <hr />
+        Data provided by&nbsp;
+        <a target="rel=noopener" href="https://www.givefood.org.uk/">
+          <strong>Give Food</strong>
+        </a>
+      </div>
+      <NavBar />
     </div>
   );
 }

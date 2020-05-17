@@ -6,6 +6,7 @@ import { useAuthContext } from "../components/Auth";
 import Home from "../pages/Home"
 import Map from "../pages/map"
 import Login from "../pages/Login"
+import ItemtoDonate from '../pages/ItemtoDonate';
 import NeededItems from '../pages/NeededItems';
 import Profile from "../pages/Profile";
 
@@ -27,6 +28,7 @@ function RouteContainer({ location }) {
         <PrivateRoute exact path="/" component={Home}/>
         <PrivateRoute path="/Map" component={Map}/>
         <PrivateRoute path="/NeededItems" component={NeededItems}/>
+        <PrivateRoute path="/ItemtoDonate" component={ItemtoDonate}/>
         <PrivateRoute path="/Profile" component={Profile}/>
     </Switch>
     

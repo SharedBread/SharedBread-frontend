@@ -67,16 +67,17 @@ h5 {
   background-color: #39AA71 !important;
 }
 
-.cardColor{ 
-  background-color: #BDC5BC;
-  
+.cardColor{
+  background-color: #BDC5BC !important;
 }
 
 .neededCardColor{
   background-color: #E3E8E4 !important;
 }
 
-
+.cardSize{
+  margin: 5px;
+}
 .addFeature{
   font-size: 26px;
   color: white !important;

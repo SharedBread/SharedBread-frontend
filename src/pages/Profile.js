@@ -71,7 +71,11 @@ function Profile() {
       {/* Profile user icon, information and point score section */}
       <div className="upper-box">
         <div className="image-container">
+<<<<<<< HEAD
         <img className="profileImg" src="profileicon.png" alt="Avatar"></img>
+=======
+          <img className="profileImg" src="profileicon.png" alt="Avatar"></img>
+>>>>>>> master
           <Badge variant="warning" className="rounded-circle">
             <div className="text-circle"> {points} </div>
           </Badge>{" "}
@@ -87,8 +91,8 @@ function Profile() {
         <h2> Badges </h2>
 
         <div className="container">
-          <div className="row" style={{ marginTop: 20 }}>
-            <div className="col text-center">
+          <div className="row">
+            <div className="col text-center badgeSpace">
               <img
                 className={hasAchieved(points, 1)}
                 src="checktest.jpg"
@@ -96,7 +100,7 @@ function Profile() {
               ></img>
               <div className="badgeTag"> Your first donation!</div>
             </div>
-            <div className="col text-center">
+            <div className="col text-center badgeSpace">
               <img
                 className={hasAchieved(points, 5)}
                 src="checktest.jpg"
@@ -104,7 +108,7 @@ function Profile() {
               ></img>
               <div className="badgeTag"> Five donations!</div>
             </div>
-            <div className="col text-center">
+            <div className="col text-center badgeSpace">
               <img
                 className={hasAchieved(points, 10)}
                 src="checktest.jpg"
@@ -112,12 +116,7 @@ function Profile() {
               ></img>
               <div className="badgeTag"> Ten donations!</div>
             </div>
-          </div>
-        </div>
-
-        <div className="container">
-          <div className="row" style={{ marginTop: 20 }}>
-            <div className="col text-center">
+            <div className="col text-center badgeSpace">
               <img
                 className={hasAchieved(points, 25)}
                 src="checktest.jpg"
@@ -125,7 +124,7 @@ function Profile() {
               ></img>
               <div className="badgeTag"> Big Donator!</div>
             </div>
-            <div className="col text-center">
+            <div className="col text-center badgeSpace">
               <img
                 className={hasAchieved(points, 50)}
                 src="checktest.jpg"
@@ -133,7 +132,7 @@ function Profile() {
               ></img>
               <div className="badgeTag"> Charitable Chamption!</div>
             </div>
-            <div className="col text-center">
+            <div className="col text-center badgeSpace">
               <img
                 className={hasAchieved(points, 100)}
                 src="checktest.jpg"
