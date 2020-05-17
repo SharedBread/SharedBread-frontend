@@ -123,45 +123,5 @@ function ItemtoDonate() {
 }
 export default ItemtoDonate;
 
-{/* <div className="col-1">
-    <GrFormAdd className="addButton" onClick={() => increaseBy1(item.ID)} />
-    <p>{count[item.ID]}</p>
-    <RiSubtractLine className="substractButton"  onClick={() => decreaseBy1(item.ID)} />
-</div> */}
-
-{/* <Popup trigger={<Button className="btn-sm" variant="success" type="submit" >✔</Button>} modal>
-                                    {close => ( 
-                                        
-                                        <div className="modal">
-                                            <a className="close" onClick={close}>
-                                                &times;
-                                                </a>
-                                            <div className="header"> Model Title</div>
-                                            <div className="content">
-                                                {" "}
-                        Have you donated this item?
-                                        </div>
-                                            <div className="actions">
-                                                <Popup trigger={<Button className="button"> Yes </Button>}
-                                                    position="top center"
-                                                    closeOnDocumentClick>
-                                                    <span>Thank you for donating! <br/>
-                                                              Check you profile page to check your points.</span>
-
-                                                </Popup>
-
-                                                <Button
-                                                    className="button"
-                                                    onClick={() => {
-                                                        console.log("modal closed ");
-                                                        close();
-                                                    }}
-                                                >
-                                                    No
-                                                </Button>
-                                            </div>
-                                        </div>
-                                    )}
-                                </Popup> */}
 
 
