@@ -13,6 +13,7 @@ function Profile() {
   const { authData } = useAuthContext();
   const AuthID = authData.attributes.sub.toString();
   const name = authData.attributes.name
+  const postcode = authData.attributes["custom:postcode"]
 
 
   useEffect(() => {
@@ -48,8 +49,8 @@ function Profile() {
     setPoints(numOfDonations + (amountOfItems - numOfDonations) + uniqueItems);
   };
 
-  const userfullname = "Leslie Knope";
-  const location = "Pawnee";
+  const userfullname = name;
+  const location = postcode;
 
   const hasAchieved = (usersPoints, thresholdPoints) => {
     return usersPoints >= thresholdPoints ? "achievedBadge" : "greyBadge";
