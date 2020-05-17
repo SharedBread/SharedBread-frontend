@@ -27,7 +27,7 @@ function Login() {
       </h1>
       <p style={{ marginTop: 30 }}>
         Thank you for visiting the SharedBread app. To help your local food
-        banks, please sign up below and let's get started.
+        banks, please sign in or create an account to get started.
       </p>
       <AmplifyAuthenticator>
       <AmplifySignIn />
