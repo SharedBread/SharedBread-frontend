@@ -6,11 +6,6 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-<<<<<<< HEAD
-    "bootstrap": "^4.5.0",
-    "react": "^16.13.1",
-    "react-bootstrap": "^1.0.1",
-=======
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "bootstrap-icons": "^1.0.0-alpha3",
@@ -19,7 +14,6 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-chartjs-2": "^2.9.0",
->>>>>>> 2d81975e7780f85c8579a1ec863e7eb2ab88052c
     "react-dom": "^16.13.1",
     "react-geocode": "^0.2.1",
     "react-google-maps": "^9.4.5",
