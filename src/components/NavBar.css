@@ -1,0 +1,41 @@
+/* Places the navbar at the bottom of the page, and make it stick */
+.navbar {
+    background-color: #497C5B;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    display: inline-flex;
+  }
+  
+  /* Styles the links inside the navigation bar */
+
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1% 5.3%;
+    text-decoration: none;
+    font-size: 18px;
+  } 
+
+  @media (max-width: 576px) { 
+    .navbar a{
+      padding: 3% 5%;
+    }
+   }
+
+  @media (max-width: 379px) { 
+    .navbar a{
+      padding: 3% 3.2%;
+    }
+  }
+
+
+  /* Adds a color to the active/current link */
+  .navbar a.active {
+    color: #BDC5BC;
+  }
+

@@ -16,6 +16,20 @@ h1 {
   font-size: 30px;
   color: #497C5B;
   font-weight: 700 !important;
+  padding-top: 5%;
+}
+/* Sub headings */
+h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 25px !important;
+  font-weight: 400 !important;
+  color: #394648;
+}
+
+/* Body titles */
+h3 {
+  font-family: 'Roboto', sans-serif;
+  color: #497C5B;
 }
 /* Sub headings */
 h2 {
@@ -31,15 +45,43 @@ h3 {
   color: #497C5B;
 }
 
-h4{
-  font-family: 'Quicksand';
-  color: #6EB257;
-}
-
 .button {
   font-size: 24px !important;
   color: #FFFFFF !important;
   background-color: #39AA71 !important;
+}
+
+
+h4{
+  font-family: 'Quicksand';
+  color: #497C5B;
+}
+
+h5 {
+  font-size: 18px;
+  color:#394648 ;
+}
+.button {
+  font-size: 24px !important;
+  color: #FFFFFF !important;
+  background-color: #39AA71 !important;
+}
+
+.cardColor{
+  background-color: #BDC5BC !important;
+}
+
+.neededCardColor{
+  background-color: #E3E8E4 !important;
+}
+
+.cardSize{
+  margin: 5px;
+}
+.addFeature{
+  font-size: 26px;
+  color: white !important;
+ text-align: left;
 }
 
 
