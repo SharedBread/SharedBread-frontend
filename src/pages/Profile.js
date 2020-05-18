@@ -91,7 +91,7 @@ function Profile() {
             <div className="col text-center badgeSpace">
               <img
                 className={hasAchieved(points, 1)}
-                src="checktest.jpg"
+                src="1donate-01.png"
                 alt="Badge for 1 donation achieved"
               ></img>
               <div className="badgeTag"> Your first donation!</div>
@@ -99,7 +99,7 @@ function Profile() {
             <div className="col text-center badgeSpace">
               <img
                 className={hasAchieved(points, 5)}
-                src="checktest.jpg"
+                src="5donate-01.png"
                 alt="Badge for 5 donations achieved"
               ></img>
               <div className="badgeTag"> Five donations!</div>
@@ -107,7 +107,7 @@ function Profile() {
             <div className="col text-center badgeSpace">
               <img
                 className={hasAchieved(points, 10)}
-                src="checktest.jpg"
+                src="10donate-01.png"
                 alt="Badge for 10 donations achieved"
               ></img>
               <div className="badgeTag"> Ten donations!</div>
@@ -115,7 +115,7 @@ function Profile() {
             <div className="col text-center badgeSpace">
               <img
                 className={hasAchieved(points, 25)}
-                src="checktest.jpg"
+                src="25donate-01.png"
                 alt="Badge for 25 donations achieved"
               ></img>
               <div className="badgeTag"> Big Donator!</div>
@@ -123,7 +123,7 @@ function Profile() {
             <div className="col text-center badgeSpace">
               <img
                 className={hasAchieved(points, 50)}
-                src="checktest.jpg"
+                src="50donate-01.png"
                 alt="Badge for 50 donations achieved"
               ></img>
               <div className="badgeTag"> Charitable Chamption!</div>
@@ -131,7 +131,7 @@ function Profile() {
             <div className="col text-center badgeSpace">
               <img
                 className={hasAchieved(points, 100)}
-                src="checktest.jpg"
+                src="100donate-01.png"
                 alt="Badge for 100 donations achieved"
               ></img>
               <div className="badgeTag"> Community Hero!</div>
