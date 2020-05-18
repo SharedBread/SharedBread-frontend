@@ -13,17 +13,22 @@ function ItemtoDonate() {
     const [items, setItems] = useState([
         {
             ID: 0,
-            text: "orange",
+            text: "tin of beans",
             sum: 1
         },
         {
             ID: 1,
-            text: "apples",
+            text: "tin of peas",
             sum: 1
         },
         {
             ID: 2,
-            text: "candy",
+            text: "toilet roll",
+            sum: 1,
+        },
+        {
+            ID: 3,
+            text: "bread",
             sum: 1,
         }
     ]);
