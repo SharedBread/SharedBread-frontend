@@ -62,7 +62,6 @@ function Map() {
                   <h4>{location.name} </h4>
                 </Card.Title>
                 <Card.Text> {location.address}</Card.Text>
-                {/* <Card.Text>  {location.postcode}</Card.Text>   */}
                 <Card.Text> {location.phone}</Card.Text>
               </Card.Body>
             </Card>
