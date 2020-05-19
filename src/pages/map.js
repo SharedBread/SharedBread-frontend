@@ -62,7 +62,7 @@ function Map() {
                   <h4>{location.name} </h4>
                 </Card.Title>
                 <Card.Text> {location.address}</Card.Text>
-                <Card.Text> {location.phone}</Card.Text>
+                <Card.Text> <a href={`tel:${location.phone}`}>Call: {location.phone}</a></Card.Text>
               </Card.Body>
             </Card>
           );
