@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Badge from "react-bootstrap/Badge";
 import "./Profile.css";
 import axios from "axios";
-<<<<<<< HEAD
 import { useAuthContext } from "../components/Auth";
 import { AmplifySignOut } from "@aws-amplify/ui-react";
 import { Hub } from "aws-amplify";
@@ -26,12 +25,6 @@ function Profile() {
   const postcode = authData.attributes["custom:postcode"]
 
 
-=======
-function Profile() {
-  // set initial user points
-  const [points, setPoints] = useState(0);
-  // AuthID is dynamic - SEE DEPLOYMENT BRANCH FOR LIVE DYNAMIC VERSION
->>>>>>> master
   useEffect(() => {
     // fetch donations from api
     axios
@@ -46,12 +39,8 @@ function Profile() {
         userPoints(response.data);
       })
       .catch((err) => console.log('error:', err));
-<<<<<<< HEAD
   }, [AuthID, name]);
 
-=======
-  }, []);
->>>>>>> master
   // function to determine overall user score using 3 data points
   const userPoints = (data) => {
     // first data point (number of individual donations made)
@@ -65,15 +54,10 @@ function Profile() {
     const uniqueItems = [...new Set(data.map((i) => i.FoodItem))].length;
     setPoints(numOfDonations + (amountOfItems - numOfDonations) + uniqueItems);
   };
-<<<<<<< HEAD
 
   const userfullname = name;
   const location = postcode;
 
-=======
-  const userfullname = "Leslie Knope";
-  const location = "Pawnee";
->>>>>>> master
   const hasAchieved = (usersPoints, thresholdPoints) => {
     return usersPoints >= thresholdPoints ? "achievedBadge" : "greyBadge";
   };
