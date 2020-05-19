@@ -6,6 +6,18 @@ import {
   withScriptjs,
 } from "react-google-maps";
 import { Card } from "react-bootstrap";
+import Geocode from "react-geocode";
+
+Geocode.setApiKey("");
+Geocode.fromAddress("PR253NX").then(
+  response => {
+    const { lat, lng } = response.results[0].geometry.location;
+    console.log(lat, lng);
+  },
+  error => {
+    console.error(error);
+  }
+);
 
 function Map() {
   const postCode = "PR253NX";
