@@ -15,11 +15,6 @@ function Map() {
         </GoogleMap>
     ));
 
-<<<<<<< HEAD
-=======
-    const postCode = "PR253NX"
-
->>>>>>> master
     const [locations, setLocation] = useState([])
 
     // get users postcode
