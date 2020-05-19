@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Badge from "react-bootstrap/Badge";
 import "./Profile.css";
 import axios from "axios";
+<<<<<<< HEAD
 import { useAuthContext } from "../components/Auth";
 import { AmplifySignOut } from "@aws-amplify/ui-react";
 import { Hub } from "aws-amplify";
@@ -25,6 +26,12 @@ function Profile() {
   const postcode = authData.attributes["custom:postcode"]
 
 
+=======
+function Profile() {
+  // set initial user points
+  const [points, setPoints] = useState(0);
+  // AuthID is dynamic - SEE DEPLOYMENT BRANCH FOR LIVE DYNAMIC VERSION
+>>>>>>> master
   useEffect(() => {
     // fetch donations from api
     axios
@@ -39,39 +46,44 @@ function Profile() {
         userPoints(response.data);
       })
       .catch((err) => console.log('error:', err));
+<<<<<<< HEAD
   }, [AuthID, name]);
 
+=======
+  }, []);
+>>>>>>> master
   // function to determine overall user score using 3 data points
   const userPoints = (data) => {
     // first data point (number of individual donations made)
     const numOfDonations = data.length;
-
     // second data point (total amount of items donated)
     let amountOfItems = 0;
     data.forEach((i) => {
       amountOfItems += i.Amount;
     });
-
     // third data point (number of unique items donated)
     const uniqueItems = [...new Set(data.map((i) => i.FoodItem))].length;
-
     setPoints(numOfDonations + (amountOfItems - numOfDonations) + uniqueItems);
   };
+<<<<<<< HEAD
 
   const userfullname = name;
   const location = postcode;
 
+=======
+  const userfullname = "Leslie Knope";
+  const location = "Pawnee";
+>>>>>>> master
   const hasAchieved = (usersPoints, thresholdPoints) => {
     return usersPoints >= thresholdPoints ? "achievedBadge" : "greyBadge";
   };
-
   return (
     <>
     <AmplifySignOut />
       {/* Profile user icon, information and point score section */}
       <div className="upper-box">
         <div className="image-container">
-          <img className="profileImg" src="profileicon.png" alt="Avatar"></img>
+          <img className="profileImg" src="/profileicon.png" alt="Avatar"></img>
           <Badge variant="warning" className="rounded-circle">
             <div className="text-circle"> {points} </div>
           </Badge>{" "}
@@ -81,12 +93,10 @@ function Profile() {
         <h2> {userfullname} </h2>
         <p>{location}</p>
       </div>
-
       {/* Badges section. If the user score reached certain badges the icon becomes full color */}
       <div className="badgeSection">
         <h2> Badges </h2>
-
-        <div className="container">
+        <div className="continer">
           <div className="row">
             <div className="col text-center badgeSpace">
               <img
@@ -142,5 +152,4 @@ function Profile() {
     </>
   );
 }
-
 export default Profile;

@@ -6,6 +6,10 @@ import Snackbar from "@material-ui/core/Snackbar";
 import axios from "axios";
 
 function NeededItems() {
+<<<<<<< HEAD
+=======
+  const postCode = "PR253NX";
+>>>>>>> master
 
   // state to open / close snackbar
   const [open, setOpen] = useState(false);

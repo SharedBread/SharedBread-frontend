@@ -15,6 +15,11 @@ function Map() {
         </GoogleMap>
     ));
 
+<<<<<<< HEAD
+=======
+    const postCode = "PR253NX"
+
+>>>>>>> master
     const [locations, setLocation] = useState([])
 
     // get users postcode
@@ -45,7 +50,7 @@ function Map() {
                                     <Card.Body>
                                      <Card.Title>  <h4>{location.name} </h4></Card.Title>  
                                      <Card.Text>  {location.address}</Card.Text>  
-                                     <Card.Text>  {location.postcode}</Card.Text>  
+                                     {/* <Card.Text>  {location.postcode}</Card.Text>   */}
                                      <Card.Text>  {location.phone}</Card.Text>
                                     </Card.Body>
                                 </Card>
