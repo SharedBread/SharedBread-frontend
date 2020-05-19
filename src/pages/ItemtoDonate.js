@@ -13,22 +13,22 @@ function ItemtoDonate() {
     const [items, setItems] = useState([
         {
             ID: 0,
-            text: "tin of beans",
+            text: "Milk (UHT)",
             sum: 1
         },
         {
             ID: 1,
-            text: "tin of peas",
+            text: "Tinned Tomatoes",
             sum: 1
         },
         {
             ID: 2,
-            text: "toilet roll",
+            text: "Tinned Tuna",
             sum: 1,
         },
         {
             ID: 3,
-            text: "bread",
+            text: "Tinned Meat Meals",
             sum: 1,
         }
     ]);
@@ -58,9 +58,17 @@ function ItemtoDonate() {
     };
 
     const [show, setShow] = useState(false);
+    const [selectedId, setSelectedId] = useState(null);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleClose = () => {
+        setShow(false)
+        handleDeleteOnClick(selectedId)
+    };
+    const handleShow = (id) =>{
+        console.log(id)
+        setShow(true)
+        setSelectedId(id);
+    };
 
     return (
         <div>
@@ -76,7 +84,7 @@ function ItemtoDonate() {
 
             {items.map(item => {
                 return (
-                    <div className="container">
+                    <div className="container" key={item.ID}>
                         <div className="row align-items">
                             <div className="col-2">
                                 <Button className="button">
@@ -91,7 +99,7 @@ function ItemtoDonate() {
                             </div>
 
                             <div className="col-2">
-                                <Button className="button" onClick={handleShow}>✓</Button>
+                                <Button className="button" onClick={() => handleShow(item.ID)}>✓</Button>
                             </div>
 
                         </div>
