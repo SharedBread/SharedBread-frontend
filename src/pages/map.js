@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, Marker, withGoogleMap, withScriptjs } from 'react-google-maps';
 import { Card } from 'react-bootstrap';
+import Geocode from "react-geocode";
 
 function Map() {
 
@@ -23,22 +24,23 @@ function Map() {
             defaultZoom={8}
             defaultCenter={{ lat: 53.483959, lng: -2.244644 }}
         >
-<Marker
-position={{lat: 53.483959, lng: -2.244644 }}>
-</Marker>
-           
+            <Marker
+                position={{ lat: 53.483959, lng: -2.244644 }}>
+            </Marker>
+
             {locations.map(location => {
                 return (
-                <Marker 
-                key={location.postcode}
-                position={{ lat: location.postcode, lng: location.postcode }}/>
+                    <Marker
+
+
+                    // key={location.postcode}
+                    // position={{ lat: location.postcode, lng: location.postcode }}
+
+                    />
                 )
             })}
         </GoogleMap>
     )));
-    
-
-
 
     return (
         <div>
@@ -46,12 +48,12 @@ position={{lat: 53.483959, lng: -2.244644 }}>
             <div style={{ width: "50vw", height: "50vh" }}>
 
                 <MyMapComponent
-                    googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyAtg5FG3OqqhhSQ7uCaTM-Kkp-Es6Wpsnc`}
+                    googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_API_KEY}`}
                     loadingElement={<div style={{ height: `100%` }} />}
                     containerElement={<div style={{ height: `500px`, width: `500px` }} />}
-                    mapElement={<div style={{ height: `100%` }} />} 
+                    mapElement={<div style={{ height: `100%` }} />}
                 />
-        
+
 
                 {locations.map(location => {
                     return (
