@@ -34,10 +34,11 @@ function ItemtoDonate() {
         }
     ]);
 
+    const UserID = 6
     useEffect(() => {
         // fetch food items from backend
         axios
-          .get("https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/basket")
+          .get(`https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/basket/${UserID}`)
           .then((response) => {
             setItems(response.data);
           })
