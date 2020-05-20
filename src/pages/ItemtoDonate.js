@@ -11,7 +11,7 @@ import axios from "axios";
 function ItemtoDonate() {
   const [items, setItems] = useState([]);
 
-  const UserID = 6;
+  const UserID = 13;
   useEffect(() => {
     // fetch food items from backend
     axios
@@ -47,8 +47,20 @@ function ItemtoDonate() {
     setItems(filteredItem);
   };
 
+  // donation amount
+  const handleAmountOnChange = (event) => {
+    setAmount(event.target.value);
+  };
+
+  // donation amount
+  const handleFoodItem = (event) => {
+    setAmount(event.target.value);
+  };
+
   const [show, setShow] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
+  const [amount, setAmount ] = useState(10)
+  const [ foodItem, setFoodItem ] = useState(null)
 
   const handleClose = () => {
     setShow(false);
@@ -57,8 +69,9 @@ function ItemtoDonate() {
         "https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/basket",
         {
           ID: selectedId,
-          FoodItem: "test",
-          Date: "2020-05-29",
+          FoodItem: foodItem,
+          Date: Date.now(),
+          Amount: amount,
           UserID: UserID,
         }
       )
@@ -69,10 +82,11 @@ function ItemtoDonate() {
         console.log("Error", err);
       });
   };
-  const handleShow = (id) => {
+  const handleShow = (id, item) => {
     console.log(id);
     setShow(true);
     setSelectedId(id);
+    setFoodItem(item);
   };
 
   return (
@@ -122,7 +136,7 @@ function ItemtoDonate() {
               </div>
 
               <div className="col-2">
-                <Button className="button" onClick={() => handleShow(item.ID)}>
+                <Button className="button" onClick={() => handleShow(item.ID, item.FoodItem)}>
                   ✓
                 </Button>
               </div>
@@ -143,7 +157,7 @@ function ItemtoDonate() {
                   <Form.Row>
                     <div className="Col inputContainer">
                       <Form.Group controlId="exampleForm.ControlInput1">
-                        <Form.Control type="number" placeholder="0" />
+                        <Form.Control type="number" placeholder="0" onChange={handleAmountOnChange} value={amount}/>
                       </Form.Group>
                     </div>
                     <div className="Col">
