@@ -5,18 +5,23 @@ import { FiTrash } from "react-icons/fi";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
-// import Popup from "reactjs-popup";
+import { useAuthContext } from "../components/Auth";
 
 //this page looks at shopping list for each user
 function ItemtoDonate() {
+
+  // get users info
+  const { authData } = useAuthContext();
+  const AuthID = authData.attributes.sub.toString();
+  console.log(AuthID)
   const [items, setItems] = useState([]);
 
-  const UserID = 13;
+  
   useEffect(() => {
     // fetch food items from backend
     axios
       .get(
-        `https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/basket/${UserID}`
+        `https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/basket/${AuthID}`
       )
       .then((response) => {
         setItems(response.data);
@@ -78,7 +83,7 @@ function ItemtoDonate() {
           FoodItem: foodItem,
           Date: date,
           Amount: amount,
-          UserID: UserID,
+          AuthID: AuthID,
         }
       )
       .then((response) => {
