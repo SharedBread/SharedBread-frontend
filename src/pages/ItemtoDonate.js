@@ -11,28 +11,7 @@ import axios from "axios";
 function ItemtoDonate() {
 
 
-    const [items, setItems] = useState([
-        {
-            ID: 0,
-            text: "Milk (UHT)",
-            sum: 1
-        },
-        {
-            ID: 1,
-            text: "Tinned Tomatoes",
-            sum: 1
-        },
-        {
-            ID: 2,
-            text: "Tinned Tuna",
-            sum: 1,
-        },
-        {
-            ID: 3,
-            text: "Tinned Meat Meals",
-            sum: 1,
-        }
-    ]);
+    const [items, setItems] = useState([]);
 
     const UserID = 6
     useEffect(() => {
@@ -107,7 +86,7 @@ function ItemtoDonate() {
 
                             <div className="col-8" style={{ paddingBottom: 10 }}>
                                 <Card className="new-card">
-                                    <Card.Text>{item.text}</Card.Text>
+                                    <Card.Text>{item.FoodItem}</Card.Text>
                                 </Card>
                             </div>
 
