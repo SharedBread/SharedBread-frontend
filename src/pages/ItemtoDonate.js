@@ -60,7 +60,7 @@ function ItemtoDonate() {
 
   const [show, setShow] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
-  const [amount, setAmount] = useState(10);
+  const [amount, setAmount] = useState(0);
   const [foodItem, setFoodItem] = useState(null);
 
   // get todays date
