@@ -54,7 +54,25 @@ function ItemtoDonate() {
 
     const handleClose = () => {
         setShow(false)
+        axios
+      .post(
+        "https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/basket",
+        {
+            ID: selectedId,
+            FoodItem: 'test',
+            Date: '2020-05-29',
+            UserID: UserID
+        }
+      )
+      .then((response) => {
         handleDeleteOnClick(selectedId)
+      })
+      .catch((err) => {
+        console.log("Error", err);
+      });
+        
+
+
     };
     const handleShow = (id) =>{
         console.log(id)
