@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
 import { useAuthContext } from "../components/Auth";
 import pattern from 'patternomaly';
+import { Spinner } from "react-bootstrap";
+
 
 function FoodsRequired() {
   
@@ -9,7 +11,8 @@ function FoodsRequired() {
   const { authData } = useAuthContext();
   const postcode = authData.attributes["custom:postcode"];
 
-  
+  const [ loading, setLoading ] = useState(true)
+
   useEffect(() => {
     fetch(
       `https://cors-anywhere.herokuapp.com/https://www.givefood.org.uk/api/1/foodbanks/search/?address=${postcode}`
@@ -17,6 +20,7 @@ function FoodsRequired() {
       .then((response) => response.json())
       .then((data) => {
         totalRequired(data);
+        setLoading(false)
       });
   }, [postcode]);
 
@@ -79,6 +83,7 @@ function FoodsRequired() {
   return (
     <>
       <h2 style={{marginTop: 30}}>Needed Items in Your Area</h2>
+      {loading ? <Spinner style = {{position: "fixed", top: "50%", left: "50%" }} animation="border" size="lg" /> : null}
       <Doughnut
         data={data}
         options={{
