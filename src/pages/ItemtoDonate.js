@@ -13,7 +13,6 @@ function ItemtoDonate() {
   // get users info
   const { authData } = useAuthContext();
   const AuthID = authData.attributes.sub.toString();
-  console.log(AuthID)
   const [items, setItems] = useState([]);
 
   
