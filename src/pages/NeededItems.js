@@ -4,6 +4,7 @@ import './NeededItems.css';
 import { useAuthContext } from "../components/Auth";
 import Snackbar from "@material-ui/core/Snackbar";
 import axios from "axios";
+import Attribution from "../components/Attribution"
 
 function NeededItems() {
 
@@ -105,6 +106,7 @@ function NeededItems() {
         onClose={handleClose}
         message="Added To Shopping Basket"
       />
+      <Attribution />
     </div>
   );
 }

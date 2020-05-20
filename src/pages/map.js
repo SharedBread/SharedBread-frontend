@@ -8,6 +8,7 @@ import {
   withScriptjs,
 } from "react-google-maps";
 import Geocode from "react-geocode";
+import Attribution from "../components/Attribution"
 
 Geocode.setApiKey(process.env.REACT_APP_GOOGLE_API_KEY);
 
@@ -100,6 +101,7 @@ function Map() {
           );
         })}
       </div>
+      <Attribution />
     </div>
   );
 }
