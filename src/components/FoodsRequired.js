@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
 import pattern from 'patternomaly';
+import { Spinner } from "react-bootstrap";
+
 
 function FoodsRequired() {
   const postcode = "M85QE"; // this will be dynamic - either geolocation or pc from DB.
+
+  const [ loading, setLoading ] = useState(true)
 
   useEffect(() => {
     fetch(
@@ -12,6 +16,7 @@ function FoodsRequired() {
       .then((response) => response.json())
       .then((data) => {
         totalRequired(data);
+        setLoading(false)
       });
   }, []);
 
@@ -74,6 +79,7 @@ function FoodsRequired() {
   return (
     <>
       <h2 style={{marginTop: 30}}>Needed Items in Your Area</h2>
+      {loading ? <Spinner style = {{position: "fixed", top: "50%", left: "50%" }} animation="border" size="lg" /> : null}
       <Doughnut
         data={data}
         options={{
