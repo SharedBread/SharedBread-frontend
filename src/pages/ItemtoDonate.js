@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './ItemtoDonate.css';
+import axios from "axios";
 import { Button, Card } from "react-bootstrap";
 import { FiTrash } from "react-icons/fi";
 import Modal from 'react-bootstrap/Modal';
@@ -10,28 +11,18 @@ import Form from 'react-bootstrap/Form'
 function ItemtoDonate() {
 
 
-    const [items, setItems] = useState([
-        {
-            ID: 0,
-            text: "Milk (UHT)",
-            sum: 1
-        },
-        {
-            ID: 1,
-            text: "Tinned Tomatoes",
-            sum: 1
-        },
-        {
-            ID: 2,
-            text: "Tinned Tuna",
-            sum: 1,
-        },
-        {
-            ID: 3,
-            text: "Tinned Meat Meals",
-            sum: 1,
-        }
-    ]);
+    const [items, setItems] = useState([]);
+
+    useEffect(()=>{
+        axios.get("https://p1jlo7jyg1.execute-api.eu-west-1.amazonaws.com/dev/basket")
+        .then(response => {
+            console.log("Success", response.data);
+            setItems(response.data)
+        })
+        .catch(err=>{
+            console.log("Error", err)
+        })
+    }, []);
 
 
     const [itemsText, setItemText] = useState('');
@@ -40,6 +31,22 @@ function ItemtoDonate() {
         setItemText(event.target.value)
     };
 
+    // axios.post("https://p1jlo7jyg1.execute-api.eu-west-1.amazonaws.com/dev/basket", {
+    //     FoodItem: text
+    // })
+    // .then(response =>{  
+    //     // if (itemsText === "") {
+    //     // alert("Please enter an item")
+    //     })
+    //     .then(response=>{
+    //         const addNewItem = response.data
+    //         const newItems = [...items, addNewItem] 
+    //         setItems(newItems)
+    //     })
+    //     .catch(err=>{
+    //         console.log("Error adding an item", err)
+    //     })
+    
     const addItemsOnClick = (data) => {
         if (itemsText === "") {
             alert("Please enter an item");
@@ -49,6 +56,19 @@ function ItemtoDonate() {
             setItems(newItems)
         }
     }
+
+    // axios.delete("https://p1jlo7jyg1.execute-api.eu-west-1.amazonaws.com/dev/basket")
+
+    // .then(response=>{
+    //     const filteredItem = items.filter(item => {
+    //         return item.ID !== data;
+    // })
+    // setItems(filteredItem)
+
+    // })
+    // .catch(err=>{
+    //     console.loglog("API Error", err)
+    // })
 
     const handleDeleteOnClick = (data) => {
         const filteredItem = items.filter(item => {
