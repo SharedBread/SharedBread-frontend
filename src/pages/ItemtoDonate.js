@@ -52,16 +52,22 @@ function ItemtoDonate() {
     setAmount(event.target.value);
   };
 
-  // donation amount
-  const handleFoodItem = (event) => {
-    setAmount(event.target.value);
-  };
 
   const [show, setShow] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
-  const [amount, setAmount ] = useState(10)
-  const [ foodItem, setFoodItem ] = useState(null)
+  const [amount, setAmount] = useState(10);
+  const [foodItem, setFoodItem] = useState(null);
 
+  // get todays date
+  const today = new Date();
+  const date =
+    new Date().getFullYear() +
+    "-" +
+    (today.getMonth() + 1) +
+    "-" +
+    today.getDate();
+
+  // function closed modal and submits data to DB  
   const handleClose = () => {
     setShow(false);
     axios
@@ -70,7 +76,7 @@ function ItemtoDonate() {
         {
           ID: selectedId,
           FoodItem: foodItem,
-          Date: Date.now(),
+          Date: date,
           Amount: amount,
           UserID: UserID,
         }
@@ -136,7 +142,10 @@ function ItemtoDonate() {
               </div>
 
               <div className="col-2">
-                <Button className="button" onClick={() => handleShow(item.ID, item.FoodItem)}>
+                <Button
+                  className="button"
+                  onClick={() => handleShow(item.ID, item.FoodItem)}
+                >
                   ✓
                 </Button>
               </div>
@@ -157,7 +166,12 @@ function ItemtoDonate() {
                   <Form.Row>
                     <div className="Col inputContainer">
                       <Form.Group controlId="exampleForm.ControlInput1">
-                        <Form.Control type="number" placeholder="0" onChange={handleAmountOnChange} value={amount}/>
+                        <Form.Control
+                          type="number"
+                          placeholder="0"
+                          onChange={handleAmountOnChange}
+                          value={amount}
+                        />
                       </Form.Group>
                     </div>
                     <div className="Col">
