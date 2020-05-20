@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import FoodBankCarousel from "../components/FoodBankCarousel";
 import FoodsRequired from "../components/FoodsRequired"
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -13,7 +14,7 @@ function Home() {
       <FoodsRequired />
       <div style={{marginTop: 30}}>
       <Button className="button" variant="success" block>
-        Donate Food
+      <Link style={{color: 'white'}} to="/NeededItems">Donate Food</Link>
       </Button>
       <Button className="button" variant="success" block>
         Donate Money
