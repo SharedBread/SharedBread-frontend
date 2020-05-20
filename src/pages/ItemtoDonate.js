@@ -45,10 +45,20 @@ function ItemtoDonate() {
   };
 
   const handleDeleteOnClick = (data) => {
-    const filteredItem = items.filter((item) => {
-      return item.ID !== data;
-    });
-    setItems(filteredItem);
+
+    axios
+      .delete(
+        `https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/basket/${data}`
+      )
+      .then((response) => {
+        const filteredItem = items.filter((item) => {
+          return item.ID !== data;
+        });
+        setItems(filteredItem);
+      })
+      .catch((err) => {
+        console.log("API error", err);
+      });
   };
 
   // donation amount
