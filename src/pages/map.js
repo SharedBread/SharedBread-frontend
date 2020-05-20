@@ -9,20 +9,29 @@ import { Card } from "react-bootstrap";
 import Geocode from "react-geocode";
 
 Geocode.setApiKey(process.env.REACT_APP_GOOGLE_API_KEY);
-Geocode.fromAddress("PR253NX").then(
-  response => {
-    const { lat, lng } = response.results[0].geometry.location;
-    console.log(lat, lng);
-  },
-  error => {
-    console.error(error);
-  }
-);
 
 function Map() {
   const postCode = "PR253NX";
 
   const [locations, setLocation] = useState([]);
+
+  const [map, setMap] = useState([]);
+  console.log("map", map);
+  const testFunc = (arr) => {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+      Geocode.fromAddress(arr[i]).then(
+        (response) => {
+          const { lat, lng } = response.results[0].geometry.location;
+          newArr.push({ lat: lat, lng: lng });
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    }
+    setMap(newArr);
+  };
 
   useEffect(() => {
     fetch(
@@ -31,6 +40,7 @@ function Map() {
       .then((response) => response.json())
       .then((data) => {
         setLocation(data);
+        testFunc(data);
       });
   }, []);
 
@@ -40,16 +50,8 @@ function Map() {
         defaultZoom={8}
         defaultCenter={{ lat: 53.483959, lng: -2.244644 }}
       >
-        <Marker position={{ lat: 53.483959, lng: -2.244644 }}></Marker>
-
-        {locations.map((location) => {
-          return (
-            <Marker
-
-            // key={location.postcode}
-            // position={{ lat: location.postcode, lng: location.postcode }}
-            />
-          );
+        {map.map((i) => {
+          return <Marker position={{ lat: i.lat, lng: i.lng }} />;
         })}
       </GoogleMap>
     ))
@@ -74,7 +76,10 @@ function Map() {
                   <h4>{location.name} </h4>
                 </Card.Title>
                 <Card.Text> {location.address}</Card.Text>
-                <Card.Text> <a href={`tel:${location.phone}`}>Call: {location.phone}</a></Card.Text>
+                <Card.Text>
+                  {" "}
+                  <a href={`tel:${location.phone}`}>Call: {location.phone}</a>
+                </Card.Text>
               </Card.Body>
             </Card>
           );
