@@ -4,6 +4,7 @@ import { Button, Card } from "react-bootstrap";
 import { FiTrash } from "react-icons/fi";
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form'
+import axios from "axios";
 // import Popup from "reactjs-popup";
 
 //this page looks at shopping list for each user 
@@ -32,6 +33,17 @@ function ItemtoDonate() {
             sum: 1,
         }
     ]);
+
+    useEffect(() => {
+        // fetch food items from backend
+        axios
+          .get("https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/basket")
+          .then((response) => {
+            setItems(response.data);
+          })
+          .catch((err) => {});
+      }, []);
+    
 
 
     const [itemsText, setItemText] = useState('');
