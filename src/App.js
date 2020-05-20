@@ -21,6 +21,7 @@ function App() {
             <RouteContainer />
           </Container>
         </AuthProvider>
+        <NavBar />
       </Router>
       <div className="col">
         {" "}
@@ -30,7 +31,7 @@ function App() {
           <strong>Give Food</strong>
         </a>
       </div>
-      <NavBar />
+ 
     </div>
   );
 }
