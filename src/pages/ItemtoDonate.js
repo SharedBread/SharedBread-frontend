@@ -57,18 +57,18 @@ function ItemtoDonate() {
         }
     }
 
-    // axios.delete("https://p1jlo7jyg1.execute-api.eu-west-1.amazonaws.com/dev/basket")
+    axios.delete("https://p1jlo7jyg1.execute-api.eu-west-1.amazonaws.com/dev/basket")
 
-    // .then(response=>{
-    //     const filteredItem = items.filter(item => {
-    //         return item.ID !== data;
-    // })
-    // setItems(filteredItem)
+    .then(response=>{
+        const filteredItem = items.filter(item => {
+            return item.ID !== item
+    })
+    setItems(filteredItem)
 
-    // })
-    // .catch(err=>{
-    //     console.loglog("API Error", err)
-    // })
+    })
+    .catch(err=>{
+        console.log("API Error", err)
+    })
 
     const handleDeleteOnClick = (data) => {
         const filteredItem = items.filter(item => {
@@ -114,7 +114,7 @@ function ItemtoDonate() {
 
                             <div className="col-8" style={{ paddingBottom: 10 }}>
                                 <Card className="new-card">
-                                    <Card.Text>{item.text}</Card.Text>
+                                    <Card.Text>{item.FoodItem}</Card.Text>
                                 </Card>
                             </div>
 
