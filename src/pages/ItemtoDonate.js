@@ -181,7 +181,7 @@ function ItemtoDonate() {
                     </div>
                     <div className="Col">
                       <Button className="donatedButton" onClick={handleClose}>
-                        Donated
+                        Donate
                       </Button>
                     </div>
                   </Form.Row>
