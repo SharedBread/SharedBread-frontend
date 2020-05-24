@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <>
       <Nav className="mr-auto navbar row justify-content-center">
         <Nav.Link>
           <Link to="/">
@@ -35,7 +34,6 @@ function NavBar() {
           </Link>
         </Nav.Link>
       </Nav>
-    </>
   );
 }
 
