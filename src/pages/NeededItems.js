@@ -21,13 +21,11 @@ function NeededItems() {
       .then((response) => response.json())
       .then((data) => {
         setLocation(data);
-        console.log(data);
       });
   }, []);
 
-  // function to add item into DB
+  // function to add item into DB 
   const addItem = (data) => {
-    console.log(data);
     axios
       .post(
         "https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/addToBasket/api",
