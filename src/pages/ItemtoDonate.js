@@ -69,8 +69,17 @@ function ItemtoDonate() {
       const [selectedId, setSelectedId] = useState(null);
       const [amount, setAmount] = useState(0);
       const [foodItem, setFoodItem] = useState(null);
+
+    // get todays date
+  const today = new Date();
+  const date =
+    new Date().getFullYear() +
+    "-" +
+    (today.getMonth() + 1) +
+    "-" +
+    today.getDate();
     
-      
+
     const handleClose = () => {
         setShow(false)
         handleDeleteOnClick(selectedId)
