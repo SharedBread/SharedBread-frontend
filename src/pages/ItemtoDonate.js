@@ -40,6 +40,7 @@ function ItemtoDonate() {
     }
   };
 
+  // delete food item from the shopping basket
   const handleDeleteOnClick = (data) => {
     axios
       .delete(
