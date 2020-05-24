@@ -75,10 +75,28 @@ function ItemtoDonate() {
     "-" +
     today.getDate();
 
+  // function closed modal and submits data to DB  
   const handleClose = () => {
     setShow(false);
-    handleDeleteOnClick(selectedId);
+    axios
+      .post(
+        "https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/basket",
+        {
+          ID: selectedId,
+          FoodItem: foodItem,
+          Date: date,
+          Amount: amount,
+          AuthID: AuthID,
+        }
+      )
+      .then((response) => {
+        handleDeleteOnClick(selectedId);
+      })
+      .catch((err) => {
+        console.log("Error", err);
+      });
   };
+  
   const handleShow = (id) => {
     console.log(id);
     setShow(true);
