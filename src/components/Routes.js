@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, withRouter } from "react-router-dom";
-import { useAuthContext } from "../components/Auth";
+import { useAuthContext } from "./Auth";
 
 // Pages
 import Home from "../pages/Home"
@@ -21,7 +21,7 @@ const PrivateRoute = ({ component, ...options }) => {
   return <Route {...options} component={redirectToComponent} />;
 };
 
-function RouteContainer({ location }) {
+function Routes({ location }) {
   return (
 
     <Switch location={location}>
@@ -35,4 +35,4 @@ function RouteContainer({ location }) {
   );
 }
 
-export default withRouter(RouteContainer);   
+export default withRouter(Routes);   

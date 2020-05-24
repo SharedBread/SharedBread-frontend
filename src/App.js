@@ -6,7 +6,7 @@ import { Container } from "react-bootstrap";
 import NavBar from "./components/NavBar.js";
 import AuthProvider from "./components/Auth";
 
-import RouteContainer from "./components/RouteContainer";
+import Routes from "./components/Routes";
 
 // AuthProvider wraps around all routes to provide
 // user authentication and user info at each route
@@ -18,7 +18,7 @@ function App() {
       <Router>
         <AuthProvider>
           <Container>
-            <RouteContainer />
+            <Routes />
           </Container>
         </AuthProvider>
         <NavBar />
