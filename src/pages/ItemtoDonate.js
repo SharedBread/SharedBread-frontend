@@ -65,9 +65,12 @@ function ItemtoDonate() {
         setAmount(event.target.value);
       };
 
-    const [show, setShow] = useState(false);
-    const [selectedId, setSelectedId] = useState(null);
-
+      const [show, setShow] = useState(false);
+      const [selectedId, setSelectedId] = useState(null);
+      const [amount, setAmount] = useState(0);
+      const [foodItem, setFoodItem] = useState(null);
+    
+      
     const handleClose = () => {
         setShow(false)
         handleDeleteOnClick(selectedId)
