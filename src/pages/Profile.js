@@ -16,7 +16,7 @@ function Profile() {
       .post(
         `https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/profile`,
         {
-            FirstName: 'Test',
+            FirstName: 'Leslie Knopp',
             AuthID: AuthID
         }
       )
