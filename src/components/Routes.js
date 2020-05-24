@@ -8,7 +8,7 @@ import ItemtoDonate from '../pages/ItemtoDonate';
 import NeededItems from '../pages/NeededItems';
 import Profile from "../pages/Profile";
 
-function RouteContainer({ location }) {
+function Routes({ location }) {
   return (
 
     <Switch location={location}>
@@ -22,4 +22,4 @@ function RouteContainer({ location }) {
   );
 }
 
-export default withRouter(RouteContainer);   
+export default withRouter(Routes);   

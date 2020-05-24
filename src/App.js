@@ -5,14 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from "react-bootstrap";
 import NavBar from "./components/NavBar.js";
 
-import RouteContainer from "./components/RouteContainer"
+import Routes from "./components/Routes"
 
 function App() {
   return (
     <div style={{ marginBottom: 86 }}>
       <Router>
           <Container>
-            <RouteContainer />
+            <Routes />
           </Container>
         <NavBar />
       </Router>
