@@ -9,20 +9,14 @@ import RouteContainer from "./components/RouteContainer"
 
 function App() {
   return (
-    <div style={{marginBottom: 86}}>
+    <div style={{ marginBottom: 86 }}>
       <Router>
-        <Container>
-          <RouteContainer />
-        </Container>
+          <Container>
+            <RouteContainer />
+          </Container>
+        <NavBar />
       </Router>
-      <div className="col"> <hr />
-            Data provided by&nbsp;
-            <a target="rel=noopener" href="https://www.givefood.org.uk/"><strong>Give Food</strong></a>
-      </div> 
-      <NavBar />
     </div>
-
-
   );
 }
 
