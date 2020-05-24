@@ -7,6 +7,8 @@ function Profile() {
   const [points, setPoints] = useState(0);
   
   const AuthID = "f87aa583-2330-43b3-a8a8-04d58247fc79"; //AuthID is dynamic. SEE DEPLOYMENT BRANCH.
+  const name = "Leslie Knopp"
+  const postcode = "PR25 3NX"
   
   useEffect(() => {
     // fetch donations from api
@@ -36,8 +38,8 @@ function Profile() {
     const uniqueItems = [...new Set(data.map((i) => i.FoodItem))].length;
     setPoints(numOfDonations + (amountOfItems - numOfDonations) + uniqueItems);
   };
-  const userfullname = "Leslie Knope";
-  const location = "Pawnee";
+  const userfullname = name
+  const location = postcode
   const hasAchieved = (usersPoints, thresholdPoints) => {
     return usersPoints >= thresholdPoints ? "achievedBadge" : "greyBadge";
   };
