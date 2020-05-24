@@ -169,15 +169,20 @@ function ItemtoDonate() {
               </Modal.Body>
               <Modal.Footer>
                 <Form>
-                  <Form.Row>
+                <Form.Row>
                     <div className="Col inputContainer">
                       <Form.Group controlId="exampleForm.ControlInput1">
-                        <Form.Control type="number" placeholder="0" />
+                        <Form.Control
+                          type="number"
+                          placeholder="0"
+                          onChange={handleAmountOnChange}
+                          value={amount}
+                        />
                       </Form.Group>
                     </div>
                     <div className="Col">
                       <Button className="donatedButton" onClick={handleClose}>
-                        Donated
+                        Donate
                       </Button>
                     </div>
                   </Form.Row>
