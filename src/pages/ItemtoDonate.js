@@ -1,37 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './ItemtoDonate.css';
 import { Button, Card } from "react-bootstrap";
 import { FiTrash } from "react-icons/fi";
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form'
-// import Popup from "reactjs-popup";
+import axios from "axios";
 
 //this page looks at shopping list for each user 
 function ItemtoDonate() {
 
 
-    const [items, setItems] = useState([
-        {
-            ID: 0,
-            text: "Milk (UHT)",
-            sum: 1
-        },
-        {
-            ID: 1,
-            text: "Tinned Tomatoes",
-            sum: 1
-        },
-        {
-            ID: 2,
-            text: "Tinned Tuna",
-            sum: 1,
-        },
-        {
-            ID: 3,
-            text: "Tinned Meat Meals",
-            sum: 1,
-        }
-    ]);
+    const [items, setItems] = useState([]);
+
+    const AuthID = "f87aa583-2330-43b3-a8a8-04d58247fc79" //AuthID is dynamic. SEE DEPLOYMENT BRANCH.
+
+    useEffect(() => {
+        // fetch food items from backend
+        axios
+          .get(
+            `https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/basket/${AuthID}`
+          )
+          .then((response) => {
+            setItems(response.data);
+          })
+          .catch((err) => {});
+      }, []);
 
 
     const [itemsText, setItemText] = useState('');
