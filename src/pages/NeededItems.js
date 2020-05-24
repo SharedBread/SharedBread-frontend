@@ -3,6 +3,7 @@ import { Card } from "react-bootstrap";
 import "./NeededItems.css";
 import Snackbar from "@material-ui/core/Snackbar";
 import axios from "axios";
+import Attribution from "../components/Attribution";
 
 function NeededItems() {
   const postCode = "PR253NX";
@@ -102,6 +103,7 @@ function NeededItems() {
         onClose={handleClose}
         message="Added To Shopping Basket"
       />
+      <Attribution />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import FoodBankCarousel from "../components/FoodBankCarousel";
 import FoodsRequired from "../components/FoodsRequired";
 import { Link } from "react-router-dom";
+import Attribution from "../components/Attribution";
 
 function Home() {
   return (
@@ -28,6 +29,7 @@ function Home() {
           Volunteer
         </Button>
       </div>
+      <Attribution />
     </>
   );
 }
