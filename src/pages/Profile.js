@@ -5,7 +5,9 @@ import axios from "axios";
 function Profile() {
   // set initial user points
   const [points, setPoints] = useState(0);
-  // AuthID is dynamic - SEE DEPLOYMENT BRANCH FOR LIVE DYNAMIC VERSION
+  
+  const AuthID = "f87aa583-2330-43b3-a8a8-04d58247fc79"; //AuthID is dynamic. SEE DEPLOYMENT BRANCH.
+  
   useEffect(() => {
     // fetch donations from api
     axios
@@ -13,7 +15,7 @@ function Profile() {
         `https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/profile`,
         {
             FirstName: 'Test',
-            AuthID: '124-afgfhak-123'
+            AuthID: AuthID
         }
       )
       .then((response) => {
