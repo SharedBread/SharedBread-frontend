@@ -146,12 +146,12 @@ function ItemtoDonate() {
 
               <div className="col-8" style={{ paddingBottom: 10 }}>
                 <Card className="new-card">
-                  <Card.Text>{item.text}</Card.Text>
+                  <Card.Text>{item.FoodItem}</Card.Text>
                 </Card>
               </div>
 
               <div className="col-2">
-                <Button className="button" onClick={() => handleShow(item.ID)}>
+                <Button className="button" onClick={() => handleShow(item.ID, item.FoodItem)}>
                   ✓
                 </Button>
               </div>
