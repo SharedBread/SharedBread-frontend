@@ -96,11 +96,12 @@ function ItemtoDonate() {
         console.log("Error", err);
       });
   };
-  
-  const handleShow = (id) => {
+
+  const handleShow = (id, item) => {
     console.log(id);
     setShow(true);
     setSelectedId(id);
+    setFoodItem(item);
   };
 
   return (
