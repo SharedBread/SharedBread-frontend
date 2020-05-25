@@ -34,13 +34,27 @@ function ItemtoDonate() {
     setItemText(event.target.value);
   };
 
+  // function to allow user to manually add custom food items to shopping basket
   const addItemsOnClick = (data) => {
     if (itemsText === "") {
       alert("Please enter an item");
     } else {
-      const addNewItem = { text: data, ID: 4 };
-      const newItems = [...items, addNewItem];
-      setItems(newItems);
+      axios
+      .post(
+        "https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/addToBasket",
+        {
+          FoodItem: data,
+          AuthID: AuthID
+        }
+      )
+      .then((response) => {
+        setItems(response.data);
+        setItemText("")
+      })
+      .catch((err) => {
+        console.log("Error", err);
+      });
+      
     }
   };
 
