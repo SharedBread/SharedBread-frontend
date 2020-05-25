@@ -40,7 +40,7 @@ function ItemtoDonate() {
         "https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/addToBasket",
         {
           FoodItem: data,
-          AuthID: "f87aa583-2330-43b3-a8a8-04d58247fc79", // Auth is dynamic on DEPLOYMENT BRANCH
+          AuthID: AuthID, // Auth is dynamic on DEPLOYMENT BRANCH
         }
       )
       .then((response) => {
