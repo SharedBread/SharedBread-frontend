@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect, useMemo, useContext } from "react";
 import { Auth } from "aws-amplify";
+import axios from "axios"
 
 // create initial context to hold the value that gets passed into components
 export const UserContext = createContext(null)
