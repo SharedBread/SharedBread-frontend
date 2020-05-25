@@ -49,4 +49,14 @@ Accessibilty was a key focus within the implementation after watching a lightnin
 * [Bradley Nichol](https://github.com/BradNichol) - Fullstack development and DevOps.
 * [Hannah Beadmore](https://github.com/HanaSoph) - Design, front-end development & marketing. 
 
+## Future Developments
+* Add functionality for food banks to ‘own’ their profile giving them extra flexibility.
+* Include a ‘volunteering’ aspect to the app where food banks can send out push notifications for local volunteers.
+* Add an option for users to donate money to their local food bank.
+* Integrate with supermarkets to allow online shopping deliveries to local food banks.
+* Add a news and updates section for news, stats & figures of what the food banks status is like or how many people rely of food bank.
+* Do more with the data! For example: ‘You’ve donated 20 loaves of bread - that’s enough for about 180 sandwiches!’ or a more advanced badge could be: ‘Most donated items in your area!’
+
+
+
 
