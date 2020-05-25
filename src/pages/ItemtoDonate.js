@@ -116,6 +116,8 @@ function ItemtoDonate() {
         console.log("Error", err);
       });
   };
+
+  // function to display donation modal
   const handleShow = (id, item) => {
     console.log(id);
     setShow(true);
