@@ -4,6 +4,8 @@ An mobile-first web app designed to help alleviate the problems that UK food ban
 
 https://www.sharedbread.app/
 
+To see the live deployment branch, with user authentication, visit: [Deployment branch](https://github.com/SharedBread/SharedBread-frontend/tree/deployment)
+
 ## The Problem
 
 * From April to September last year there was a 23% rise in food parcels being distributed from food banks to those in need (compared against the previous year).
