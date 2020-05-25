@@ -38,3 +38,15 @@ The data available within the app for local food banks and the foods they need i
 * Google Maps API
 * Chartjs
 
+## Accessibility
+Accessibilty was a key focus within the implementation after watching a lightning talk by Blue Prisms Head of UX Paul Wilshaw. 
+* Used contrast checker tool to ensure icons and titles could be seen by those with colour blindess.
+* Font sizes lifted to 18px.
+* Target areas lifted to 48 x 48px.
+
+## The Team
+* [Hanan Abdimalik](https://github.com/hananabdimalik) - Fullstack development, database build and project management.
+* [Bradley Nichol](https://github.com/BradNichol) - Fullstack development and DevOps.
+* [Hannah Beadmore](https://github.com/HanaSoph) - Design, front-end development & marketing. 
+
+
