@@ -27,3 +27,14 @@ Statistics from Trussel Trust
 ## Live API
 
 The data available within the app for local food banks and the foods they need is retrieved from a live API. https://givefood.org.uk/api/
+
+## Tech Stack
+* React
+* Node Express API
+* Serverless Lambda
+* AWS RDS
+* AWS Amplify
+* AWS Cognito
+* Google Maps API
+* Chartjs
+
