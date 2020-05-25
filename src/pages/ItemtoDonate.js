@@ -34,9 +34,21 @@ function ItemtoDonate() {
     if (itemsText === "") {
       alert("Please enter an item");
     } else {
-      const addNewItem = { text: data, ID: 4 };
-      const newItems = [...items, addNewItem];
-      setItems(newItems);
+      axios
+      .post(
+        "https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/addToBasket/api",
+        {
+          FoodItem: data,
+          AuthID: "f87aa583-2330-43b3-a8a8-04d58247fc79", // Auth is dynamic on DEPLOYMENT BRANCH
+        }
+      )
+      .then((response) => {
+        setItems(response.data);
+      })
+      .catch((err) => {
+        console.log("Error", err);
+      });
+      
     }
   };
 
