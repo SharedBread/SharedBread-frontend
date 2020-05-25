@@ -20,3 +20,7 @@ Statistics from Trussel Trust
 * There is also the option to add in other items that user might want to purchase as well.
 * With gamification, we give users even more of a sense of achievement when they donate food!
 
+<p align="center">
+    <img alt="GSD" src="./public/README-img/homepage2_pixel_quite_black_portrait.png" width="150" />
+</p>
+
