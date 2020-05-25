@@ -11,7 +11,7 @@ function ItemtoDonate() {
   const [items, setItems] = useState([]);
 
   const AuthID = "f87aa583-2330-43b3-a8a8-04d58247fc79"; //AuthID is dynamic. SEE DEPLOYMENT BRANCH.
-
+  
   useEffect(() => {
     // fetch food items from backend
     axios
@@ -30,6 +30,7 @@ function ItemtoDonate() {
     setItemText(event.target.value);
   };
 
+  // function to allow user to manually add custom food items to shopping basket
   const addItemsOnClick = (data) => {
     if (itemsText === "") {
       alert("Please enter an item");
