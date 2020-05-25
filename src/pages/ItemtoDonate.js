@@ -111,7 +111,7 @@ function ItemtoDonate() {
         console.log("Error", err);
       });
   };
-
+  // function to open donation amount modal
   const handleShow = (id, item) => {
     console.log(id);
     setShow(true);
