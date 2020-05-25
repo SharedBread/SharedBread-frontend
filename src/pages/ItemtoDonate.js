@@ -45,6 +45,7 @@ function ItemtoDonate() {
       )
       .then((response) => {
         setItems(response.data);
+        setItemText("")
       })
       .catch((err) => {
         console.log("Error", err);
