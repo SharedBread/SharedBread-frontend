@@ -24,3 +24,6 @@ Statistics from Trussel Trust
     <img alt="GSD" src="./public/README-img/homepage2_pixel_quite_black_portrait.png" />
 </p>
 
+## Live API
+
+The data available within the app for local food banks and the foods they need is retrieved from a live API. https://givefood.org.uk/api/
