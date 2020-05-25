@@ -36,7 +36,7 @@ function ItemtoDonate() {
     } else {
       axios
       .post(
-        "https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/addToBasket/api",
+        "https://f999w3tddd.execute-api.eu-west-1.amazonaws.com/dev/addToBasket",
         {
           FoodItem: data,
           AuthID: "f87aa583-2330-43b3-a8a8-04d58247fc79", // Auth is dynamic on DEPLOYMENT BRANCH
