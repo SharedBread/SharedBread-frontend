@@ -18,7 +18,7 @@ function Map() {
 
   const [map, setMap] = useState([]);
   
-  const testFunc = (arr) => {
+  const postcodeToLatLong = (arr) => {
     let newArr = [];
     for (let i = 0; i < arr.length; i++) {
       Geocode.fromAddress(arr[i].postcode).then(
@@ -41,7 +41,7 @@ function Map() {
       .then((response) => response.json())
       .then((data) => {
         setLocation(data);
-        testFunc(data);
+        postcodeToLatLong(data);
       });
   }, []);
 
