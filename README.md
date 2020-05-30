@@ -1,68 +1,64 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sharedbread - Easy Peasy Food Donations
 
-## Available Scripts
+An mobile-first web app designed to help alleviate the problems that UK food banks face. It’s main use is to acquire food donations to help support the burgeoning increases in food bank visits. Also a way for food banks to seek potential volunteers.
 
-In the project directory, you can run:
+https://www.sharedbread.app/
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## The Problem
 
-### `npm test`
+* From April to September last year there was a 23% rise in food parcels being distributed from food banks to those in need (compared against the previous year).
+* 94% of users face real destitution.
+* 23% of users are homeless.
+* Food donation fluctuate wildly and it’s difficult to maintain steady stocks.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Statistics from Trussel Trust
 
-### `npm run build`
+## Our Solution
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Our aim is to give the public a web application that’s easy to access where they can easily find their local food bank and a list of the items each food bank needs.
+* Users can then add those items to a shopping list in the app - making it really simple to view what to purchase on their next shopping trip.
+* There is also the option to add in other items that user might want to purchase as well.
+* With gamification, we give users even more of a sense of achievement when they donate food!
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<p align="center">
+    <img alt="GSD" src="./public/README-img/homepage2_pixel_quite_black_portrait.png" />
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Live API
 
-### `npm run eject`
+The data available within the app for local food banks and the foods they need is retrieved from a live API. https://givefood.org.uk/api/
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Tech Stack
+* React
+* Node Express API
+* Serverless Lambda
+* AWS RDS
+* AWS Amplify
+* AWS Cognito
+* Google Maps API
+* Chartjs
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Accessibility
+Accessibilty was a key focus within the implementation after watching a lightning talk by Blue Prisms Head of UX Paul Wilshaw. 
+* Used contrast checker tool to ensure icons and titles could be seen by those with colour blindess.
+* Font sizes lifted to 18px.
+* Target areas lifted to 48 x 48px.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## The Team
+* [Hanan Abdimalik](https://github.com/hananabdimalik) - Fullstack development, database build and project management.
+* [Bradley Nichol](https://github.com/BradNichol) - Fullstack development and DevOps.
+* [Hannah Beadmore](https://github.com/HanaSoph) - Design, front-end development & marketing. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Future Developments
+* Add functionality for food banks to ‘own’ their profile giving them extra flexibility.
+* Include a ‘volunteering’ aspect to the app where food banks can send out push notifications for local volunteers.
+* Add an option for users to donate money to their local food bank.
+* Integrate with supermarkets to allow online shopping deliveries to local food banks.
+* Add a news and updates section for news, stats & figures of what the food banks status is like or how many people rely of food bank.
+* Do more with the data! For example: ‘You’ve donated 20 loaves of bread - that’s enough for about 180 sandwiches!’ or a more advanced badge could be: ‘Most donated items in your area!’
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
