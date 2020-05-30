@@ -17,21 +17,21 @@ function Map() {
   const [locations, setLocation] = useState([]);
 
   const [map, setMap] = useState([]);
-  console.log("map", map);
+  
   const testFunc = (arr) => {
     let newArr = [];
     for (let i = 0; i < arr.length; i++) {
-      Geocode.fromAddress(arr[i]).then(
+      Geocode.fromAddress(arr[i].postcode).then(
         (response) => {
           const { lat, lng } = response.results[0].geometry.location;
           newArr.push({ lat: lat, lng: lng });
+          setMap(newArr);
         },
         (error) => {
           console.error(error);
         }
       );
     }
-    setMap(newArr);
   };
 
   useEffect(() => {
