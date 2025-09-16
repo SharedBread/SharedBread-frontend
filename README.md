@@ -2,8 +2,6 @@
 
 An mobile-first web app designed to help alleviate the problems that UK food banks face. It’s main use is to acquire food donations to help support the burgeoning increases in food bank visits. Also a way for food banks to seek potential volunteers.
 
-https://www.sharedbread.app/
-
 To see the live deployment branch, with user authentication, visit: [Deployment branch](https://github.com/SharedBread/SharedBread-frontend/tree/deployment)
 
 ## The Problem
